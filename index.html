@@ -1653,6 +1653,141 @@
         }
 
     </style>
+
+<style>
+/* =========================================================
+   AJOUTS ROYAL BAR ACADEMY — événements, paiement, calendrier,
+   localisation, témoignages et réseaux sociaux
+========================================================== */
+.training-grid,
+.payment-grid,
+.calendar-grid,
+.testimonial-grid {
+    display: grid;
+    gap: 24px;
+}
+.training-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.payment-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.calendar-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.testimonial-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+.training-card,
+.payment-card,
+.calendar-card,
+.testimonial-card,
+.location-card {
+    border-radius: 16px;
+}
+
+.training-card > i,
+.payment-card > i {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.training-price {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 16px 0;
+}
+.training-price span {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .75;
+}
+.payment-note {
+    margin-top: 28px;
+    padding: 18px 20px;
+    border-left: 3px solid currentColor;
+    border-radius: 10px;
+}
+.payment-note i { margin-right: 8px; }
+
+.payment-card {
+    padding: 25px;
+    text-align: center;
+}
+.payment-card h3 { margin: 8px 0; }
+
+.center-action {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.calendar-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    padding: 24px;
+    align-items: start;
+}
+.calendar-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+.calendar-status {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+}
+.calendar-card h3 { margin: 6px 0 14px; }
+.calendar-card p { margin: 7px 0; }
+.calendar-card > .btn { grid-column: 1 / -1; }
+
+.location-card {
+    padding: 30px;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+.location-card > i { font-size: 34px; }
+.location-card > div { flex: 1; }
+
+.testimonial-heading {
+    margin: 34px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.testimonial-card {
+    padding: 24px;
+}
+.testimonial-card .stars {
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+.testimonial-card h3 { margin-bottom: 10px; }
+.testimonial-card.featured { border-top: 3px solid currentColor; }
+
+@media (max-width: 700px) {
+    .calendar-card { grid-template-columns: 1fr; }
+    .location-card { flex-direction: column; align-items: flex-start; }
+    .location-card .btn { width: 100%; }
+}
+</style>
+
+
+<style>
+.payment-condition {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 28px;
+}
+.payment-condition > i {
+    font-size: 28px;
+    flex: 0 0 auto;
+    margin-top: 3px;
+}
+.payment-condition p {
+    margin: 8px 0 0;
+}
+</style>
+
 </head>
 
 
@@ -2764,6 +2899,305 @@
 
 
 
+
+<!-- =========================================================
+     ÉVÉNEMENTS & PRESTATIONS
+========================================================== -->
+
+<section class="section" id="evenements">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">NOS PRESTATIONS</span>
+            <h2>Événements &amp; tarifs imbattables</h2>
+            <p>
+                Un service de bar professionnel pour vos cérémonies,
+                réceptions et événements à Kinshasa, avec des formules
+                pensées pour rester accessibles sans sacrifier la qualité.
+            </p>
+        </div>
+
+        <div class="training-grid">
+            <div class="training-card">
+                <i class="fa-solid fa-ring"></i>
+                <h3>Mariage religieux</h3>
+                <p class="training-description">Une prestation élégante pour accompagner votre grand jour.</p>
+                <div class="training-price">5$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Service bar professionnel</li>
+                    <li><i class="fa-solid fa-check"></i> Cocktails &amp; boissons fraîches</li>
+                    <li><i class="fa-solid fa-check"></i> Présentation soignée</li>
+                    <li><i class="fa-solid fa-check"></i> Formule accessible</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20mariage%20religieux." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Demander un devis
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-champagne-glasses"></i>
+                <h3>Mariage coutumier</h3>
+                <p class="training-description">Une formule adaptée aux grandes réceptions familiales.</p>
+                <div class="training-price">6$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Boissons fraîches</li>
+                    <li><i class="fa-solid fa-check"></i> Cocktails sans alcool</li>
+                    <li><i class="fa-solid fa-check"></i> Service professionnel</li>
+                    <li><i class="fa-solid fa-check"></i> Présentation élégante</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20mariage%20coutumier." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Réserver
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-cake-candles"></i>
+                <h3>Anniversaire</h3>
+                <p class="training-description">Une ambiance cocktail festive pour vos invités.</p>
+                <div class="training-price">5$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cocktails &amp; mocktails</li>
+                    <li><i class="fa-solid fa-check"></i> Boissons fraîches</li>
+                    <li><i class="fa-solid fa-check"></i> Service bar</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20anniversaire." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Réserver
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Défense &amp; graduation</h3>
+                <p class="training-description">Célébrez votre réussite avec une formule économique.</p>
+                <div class="training-price">4$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cocktails sans alcool</li>
+                    <li><i class="fa-solid fa-check"></i> Jus &amp; boissons fraîches</li>
+                    <li><i class="fa-solid fa-check"></i> Service professionnel</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20graduation." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Demander un devis
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-baby"></i>
+                <h3>Baptême</h3>
+                <p class="training-description">Une réception familiale avec des boissons soigneusement préparées.</p>
+                <div class="training-price">4,50$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Boissons fraîches</li>
+                    <li><i class="fa-solid fa-check"></i> Cocktails sans alcool</li>
+                    <li><i class="fa-solid fa-check"></i> Service soigné</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20bapteme." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Réserver
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-building"></i>
+                <h3>Événement d'entreprise</h3>
+                <p class="training-description">Une prestation professionnelle pour vos événements corporate.</p>
+                <div class="training-price">7$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Service bar professionnel</li>
+                    <li><i class="fa-solid fa-check"></i> Cocktails personnalisés</li>
+                    <li><i class="fa-solid fa-check"></i> Présentation premium</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20evenement%20d%27entreprise." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Demander un devis
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-music"></i>
+                <h3>Soirée privée</h3>
+                <p class="training-description">Une expérience cocktail adaptée à votre soirée.</p>
+                <div class="training-price">6$ <span>/ personne</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Cocktails &amp; mocktails</li>
+                    <li><i class="fa-solid fa-check"></i> Service bar</li>
+                    <li><i class="fa-solid fa-check"></i> Présentation festive</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20soiree%20privee." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Réserver
+                </a>
+            </div>
+
+            <div class="training-card">
+                <i class="fa-solid fa-house"></i>
+                <h3>Bar à domicile</h3>
+                <p class="training-description">Nous installons une véritable expérience cocktail chez vous.</p>
+                <div class="training-price">Sur devis</div>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Installation du bar</li>
+                    <li><i class="fa-solid fa-check"></i> Barman professionnel</li>
+                    <li><i class="fa-solid fa-check"></i> Carte personnalisée</li>
+                </ul>
+                <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20bar%20a%20domicile." target="_blank" class="btn btn-whatsapp full">
+                    <i class="fa-brands fa-whatsapp"></i> Nous contacter
+                </a>
+            </div>
+        </div>
+
+        <div class="payment-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <strong>Tarifs à partir de :</strong> le prix final dépend du nombre d'invités,
+            du lieu, de la durée, du menu choisi et des options supplémentaires.
+            <strong>Demandez votre devis personnalisé.</strong><br><strong>Réservation :</strong> 50% du montant de la prestation est requis avant le service.
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAIEMENT
+========================================================== -->
+
+<section class="section section-dark" id="paiement">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">PAIEMENT FACILE</span>
+            <h2>Payez selon votre moyen préféré</h2>
+            <p>Formation ou réservation : contactez-nous pour recevoir les instructions de paiement.</p>
+        </div>
+
+        <div class="payment-grid">
+            <div class="payment-card"><i class="fa-solid fa-mobile-screen-button"></i><h3>M-Pesa</h3><p>Paiement mobile rapide.</p></div>
+            <div class="payment-card"><i class="fa-solid fa-mobile-screen-button"></i><h3>Orange Money</h3><p>Payez simplement par mobile.</p></div>
+            <div class="payment-card"><i class="fa-solid fa-mobile-screen-button"></i><h3>Airtel Money</h3><p>Une solution mobile pratique.</p></div>
+            <div class="payment-card"><i class="fa-solid fa-mobile-screen-button"></i><h3>Africell Money</h3><p>Un autre moyen simple et accessible.</p></div>
+        </div>
+
+        <div class="center-action">
+            <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20recevoir%20les%20informations%20de%20paiement." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Recevoir les informations de paiement
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     CALENDRIER DES FORMATIONS
+========================================================== -->
+
+<section class="section" id="calendrier">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">CALENDRIER</span>
+            <h2>Prochaines formations</h2>
+            <p>Consultez les sessions disponibles et réservez votre place.</p>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="calendar-card">
+                <div class="calendar-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                    <span class="calendar-status">PROCHAINE SESSION</span>
+                    <h3>Initiation Barman</h3>
+                    <p><i class="fa-regular fa-calendar"></i> Date : à confirmer</p>
+                    <p><i class="fa-regular fa-clock"></i> Horaires : selon programme</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Kinshasa, RDC</p>
+                    <p><i class="fa-solid fa-dollar-sign"></i> 50$ / formation</p>
+                </div>
+                <a href="#inscription" class="btn btn-gold">S'inscrire</a>
+            </div>
+
+            <div class="calendar-card">
+                <div class="calendar-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                    <span class="calendar-status">PROCHAINE SESSION</span>
+                    <h3>Barman Professionnel</h3>
+                    <p><i class="fa-regular fa-calendar"></i> Date : à confirmer</p>
+                    <p><i class="fa-regular fa-clock"></i> Horaires : selon programme</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Kinshasa, RDC</p>
+                    <p><i class="fa-solid fa-dollar-sign"></i> 75$ / formation</p>
+                </div>
+                <a href="#inscription" class="btn btn-gold">S'inscrire</a>
+            </div>
+
+            <div class="calendar-card">
+                <div class="calendar-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                    <span class="calendar-status">PROCHAINE SESSION</span>
+                    <h3>Mixologie Pro</h3>
+                    <p><i class="fa-regular fa-calendar"></i> Date : à confirmer</p>
+                    <p><i class="fa-regular fa-clock"></i> Horaires : selon programme</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Kinshasa, RDC</p>
+                    <p><i class="fa-solid fa-dollar-sign"></i> 100$ / formation</p>
+                </div>
+                <a href="#inscription" class="btn btn-gold">S'inscrire</a>
+            </div>
+        </div>
+
+        <div class="payment-note">
+            <i class="fa-solid fa-bell"></i>
+            Les dates sont annoncées dès l'ouverture de chaque nouvelle session.
+            Pour connaître la prochaine date, contactez-nous sur WhatsApp.
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     LOCALISATION
+========================================================== -->
+
+<section class="section section-dark" id="localisation">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">LOCALISATION</span>
+            <h2>Nous trouver à Kinshasa</h2>
+            <p>Royal Bar Academy — République démocratique du Congo.</p>
+        </div>
+
+        <div class="location-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <h3>Royal Bar Academy</h3>
+                <p>Kinshasa, République démocratique du Congo</p>
+                <p>Pour recevoir l'adresse exacte et les indications, contactez-nous sur WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20recevoir%20la%20localisation%20de%20Royal%20Bar%20Academy." target="_blank" class="btn btn-gold">
+                <i class="fa-solid fa-map-location-dot"></i> Recevoir la localisation
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     TÉMOIGNAGES
+========================================================== -->
+
+<section class="section" id="temoignages">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">TÉMOIGNAGES</span>
+            <h2>Ils parlent de leur expérience</h2>
+            <p>Quelques retours de clients et d'apprenants de Royal Bar Academy.</p>
+        </div>
+
+        <h3 class="testimonial-heading"><i class="fa-solid fa-champagne-glasses"></i> Nos clients</h3>
+        <div class="testimonial-grid">
+            <div class="testimonial-card"><div class="stars">★★★☆☆</div><h3>Sarah Mukadi</h3><p>Une expérience satisfaisante avec Royal Bar Academy et une prestation professionnelle.</p></div>
+            <div class="testimonial-card"><div class="stars">★★★☆☆</div><h3>Lauriane Mbuyi</h3><p>Une prestation appréciable avec une bonne organisation et un service professionnel.</p></div>
+            <div class="testimonial-card"><div class="stars">★★★☆☆</div><h3>Patrick Kyungu</h3><p>Une belle expérience avec l'équipe Royal Bar Academy.</p></div>
+            <div class="testimonial-card"><div class="stars">★★★☆☆</div><h3>Serge Kola</h3><p>Un service professionnel et une prestation bien réalisée.</p></div>
+            <div class="testimonial-card"><div class="stars">★★★☆☆</div><h3>Henock Nsimba</h3><p>Une expérience positive avec Royal Bar Academy et son équipe.</p></div>
+        </div>
+
+        <h3 class="testimonial-heading"><i class="fa-solid fa-graduation-cap"></i> Nos apprenants</h3>
+        <div class="testimonial-grid">
+            <div class="testimonial-card featured"><div class="stars">★★★★★</div><h3>Cédric Ngoi</h3><p>Une bonne formation suivie avec Royal Bar Academy, avec une approche pratique et des connaissances utiles dans le domaine du bar.</p></div>
+            <div class="testimonial-card featured"><div class="stars">★★★★★</div><h3>Arlette Mbo</h3><p>Une formation enrichissante avec beaucoup de pratique et de nouvelles connaissances.</p></div>
+            <div class="testimonial-card featured"><div class="stars">★★★★★</div><h3>Carine Mampamboli</h3><p>Une très bonne expérience de formation et beaucoup d'apprentissages sur le métier de barman.</p></div>
+        </div>
+    </div>
+</section>
+
+
 <!-- =========================================================
      INSCRIPTION
 ========================================================== -->
@@ -2892,6 +3326,23 @@
 
                         </select>
 
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="evenement">
+                            <i class="fa-solid fa-calendar-check"></i> ÉVÉNEMENT / PRESTATION
+                        </label>
+                        <select id="evenement" name="evenement">
+                            <option value="">Choisir une prestation (facultatif)</option>
+                            <option value="Mariage religieux — 5$/personne">Mariage religieux — à partir de 5$/personne</option>
+                            <option value="Mariage coutumier — 6$/personne">Mariage coutumier — à partir de 6$/personne</option>
+                            <option value="Anniversaire — 5$/personne">Anniversaire — à partir de 5$/personne</option>
+                            <option value="Défense / Graduation — 4$/personne">Défense / Graduation — à partir de 4$/personne</option>
+                            <option value="Baptême — 4,50$/personne">Baptême — à partir de 4,50$/personne</option>
+                            <option value="Événement d'entreprise — 7$/personne">Événement d'entreprise — à partir de 7$/personne</option>
+                            <option value="Soirée privée — 6$/personne">Soirée privée — à partir de 6$/personne</option>
+                            <option value="Bar à domicile — sur devis">Bar à domicile — sur devis</option>
+                        </select>
                     </div>
 
 
@@ -3038,6 +3489,11 @@
                 et mixologie.
             </p>
 
+            <p class="footer-social-label">
+                <strong>Suivez Alpha Lamarque</strong><br>
+                TikTok • Facebook • Instagram
+            </p>
+
 
             <div class="footer-socials">
 
@@ -3053,9 +3509,31 @@
 
                 <a
                     href="#"
-                    class="social">
+                    class="social"
+                    aria-label="Facebook — Alpha Lamarque"
+                    title="Facebook — Alpha Lamarque">
 
                     <i class="fa-brands fa-facebook-f"></i>
+
+                </a>
+
+                <a
+                    href="#"
+                    class="social"
+                    aria-label="TikTok — Alpha Lamarque"
+                    title="TikTok — Alpha Lamarque">
+
+                    <i class="fa-brands fa-tiktok"></i>
+
+                </a>
+
+                <a
+                    href="#"
+                    class="social"
+                    aria-label="Instagram — Alpha Lamarque"
+                    title="Instagram — Alpha Lamarque">
+
+                    <i class="fa-brands fa-instagram"></i>
 
                 </a>
 
@@ -3107,6 +3585,18 @@
 
             <a href="#inscription">
                 Inscription
+            </a>
+
+            <a href="#evenements">
+                Événements
+            </a>
+
+            <a href="#calendrier">
+                Calendrier
+            </a>
+
+            <a href="#temoignages">
+                Témoignages
             </a>
 
         </div>
