@@ -1,0 +1,4032 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Royal Bar Academy - Services de bar, cocktails, événements et formations professionnelles de barman et mixologie.">
+
+    <title>Royal Bar Academy | Bar & Formations Professionnelles</title>
+
+    <!-- =====================================================
+         POLICES
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- =====================================================
+         ICONES
+    ====================================================== -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- =====================================================
+         CSS
+         Tout le design est directement dans ce fichier.
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
+
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f4d778;
+            --gold-dark: #9c7413;
+
+            --black: #050505;
+            --dark: #0c0c0c;
+            --dark-2: #141414;
+            --dark-3: #1c1c1c;
+
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --light: #f7f7f7;
+
+            --green: #25D366;
+
+            --container: 1200px;
+
+            --shadow:
+                0 20px 60px rgba(0,0,0,.25);
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+
+        .container {
+            width: min(92%, var(--container));
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           BARRE DE NAVIGATION
+        ====================================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(0,0,0,.82);
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid rgba(212,175,55,.15);
+
+            transition: .3s;
+        }
+
+
+        .header.scrolled {
+            background: rgba(0,0,0,.97);
+        }
+
+
+        .nav {
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            color: var(--gold);
+
+            font-size: 20px;
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .logo i {
+            font-size: 30px;
+        }
+
+
+        .logo span {
+            color: var(--white);
+        }
+
+
+        .logo strong {
+            color: var(--gold);
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+            color: #ddd;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .3s;
+
+            position: relative;
+        }
+
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--gold);
+
+            transition: .3s;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        .menu-button {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           BOUTONS
+        ====================================================== */
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 25px;
+
+            border-radius: 5px;
+
+            border: 1px solid transparent;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+
+        .btn-gold {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold-dark)
+                );
+
+            color: #080808;
+        }
+
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(212,175,55,.25);
+        }
+
+
+        .btn-outline {
+            border-color: rgba(255,255,255,.45);
+            color: white;
+        }
+
+
+        .btn-outline:hover {
+            background: white;
+            color: #111;
+        }
+
+
+        .btn-whatsapp {
+            background: var(--green);
+            color: white;
+        }
+
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(37,211,102,.25);
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.94),
+                    rgba(0,0,0,.68),
+                    rgba(0,0,0,.35)
+                ),
+                url("images/bar.jpg")
+                center/cover no-repeat;
+        }
+
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 160px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    var(--black)
+                );
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            padding-top: 70px;
+        }
+
+
+        .hero-text {
+            max-width: 760px;
+        }
+
+
+        .eyebrow {
+            display: inline-block;
+
+            color: var(--gold);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size:
+                clamp(48px, 7vw, 88px);
+
+            line-height: 1.02;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+
+        .hero p {
+            max-width: 680px;
+
+            color: #ddd;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        .hero-info {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 30px;
+
+            margin-top: 45px;
+        }
+
+
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: #ccc;
+
+            font-size: 12px;
+        }
+
+
+        .hero-info-item i {
+            color: var(--gold);
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        .section {
+            padding: 110px 0;
+        }
+
+
+        .section-dark {
+            background: #0b0b0b;
+        }
+
+
+        .section-light {
+            background: var(--light);
+            color: #111;
+        }
+
+
+        .section-title {
+            max-width: 720px;
+
+            margin:
+                0 auto 60px;
+
+            text-align: center;
+        }
+
+
+        .section-title .small-title {
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+        }
+
+
+        .section-title h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(35px, 5vw, 52px);
+
+            line-height: 1.1;
+
+            margin: 12px 0 18px;
+        }
+
+
+        .section-title p {
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+
+        .section-light .section-title p {
+            color: #666;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ====================================================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .service-card {
+            padding: 35px 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0e0e0e
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+
+            transition: .35s;
+        }
+
+
+        .service-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(212,175,55,.55);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: var(--gold);
+
+            background:
+                rgba(212,175,55,.1);
+
+            font-size: 25px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .service-card h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .service-card p {
+            color: var(--gray);
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .service-card a {
+            color: var(--gold);
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           CHIFFRES
+        ====================================================== */
+
+        .numbers {
+            background:
+                linear-gradient(
+                    90deg,
+                    #17120a,
+                    #080808
+                );
+
+            padding: 55px 0;
+        }
+
+
+        .numbers-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+
+        .number-box {
+            text-align: center;
+
+            padding: 15px;
+        }
+
+
+        .number-box i {
+            color: var(--gold);
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .number-box strong {
+            display: block;
+
+            color: white;
+
+            font-size: 35px;
+            font-weight: 800;
+        }
+
+
+        .number-box span {
+            color: #999;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           FORMATIONS
+        ====================================================== */
+
+        .training-section {
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.91),
+                    rgba(0,0,0,.94)
+                ),
+                url("images/formation.jpg")
+                center/cover fixed;
+        }
+
+
+        .training-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .training-card {
+            position: relative;
+
+            padding: 38px 30px;
+
+            background:
+                rgba(20,20,20,.96);
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            transition: .3s;
+        }
+
+
+        .training-card:hover {
+            transform: translateY(-7px);
+        }
+
+
+        .training-card.featured {
+            border:
+                2px solid
+                var(--gold);
+
+            transform: scale(1.03);
+        }
+
+
+        .training-card.featured:hover {
+            transform:
+                scale(1.03)
+                translateY(-7px);
+        }
+
+
+        .badge {
+            display: inline-block;
+
+            background: var(--gold);
+
+            color: #111;
+
+            padding: 6px 12px;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+
+        .training-card h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 27px;
+
+            margin-top: 18px;
+        }
+
+
+        .training-description {
+            color: #999;
+
+            font-size: 13px;
+
+            margin: 10px 0;
+        }
+
+
+        .price {
+            color: var(--gold);
+
+            font-size: 47px;
+
+            font-weight: 800;
+
+            margin: 15px 0 25px;
+        }
+
+
+        .price small {
+            font-size: 13px;
+
+            color: #999;
+        }
+
+
+        .training-list {
+            list-style: none;
+
+            margin-bottom: 30px;
+        }
+
+
+        .training-list li {
+            display: flex;
+
+            gap: 10px;
+
+            color: #ddd;
+
+            font-size: 13px;
+
+            padding: 8px 0;
+        }
+
+
+        .training-list i {
+            color: var(--gold);
+
+            margin-top: 5px;
+        }
+
+
+        .full {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           COCKTAILS
+        ====================================================== */
+
+        .cocktail-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 16px;
+        }
+
+
+        .cocktail-card {
+            position: relative;
+
+            height: 430px;
+
+            overflow: hidden;
+
+            background: #111;
+        }
+
+
+        .cocktail-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .6s;
+        }
+
+
+        .cocktail-card:hover img {
+            transform: scale(1.1);
+        }
+
+
+        .cocktail-overlay {
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+
+            padding:
+                70px 22px
+                22px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,.95)
+                );
+        }
+
+
+        .cocktail-overlay h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 25px;
+        }
+
+
+        .cocktail-overlay p {
+            color: var(--gold);
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           GALERIE
+        ====================================================== */
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 15px;
+        }
+
+
+        .gallery-item {
+            height: 260px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+        .gallery-item::after {
+            content: "\f00e";
+
+            font-family:
+                "Font Awesome 6 Free";
+
+            font-weight: 900;
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            color: white;
+
+            font-size: 25px;
+
+            opacity: 0;
+
+            transition: .3s;
+        }
+
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           VIDEOS
+        ====================================================== */
+
+        .video-section {
+            background: #090909;
+        }
+
+
+        .video-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 25px;
+        }
+
+
+        .video-card {
+            background: #151515;
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+        }
+
+
+        .video-card video {
+            width: 100%;
+
+            display: block;
+
+            background: black;
+        }
+
+
+        .video-content {
+            padding: 22px;
+        }
+
+
+        .video-content h3 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 22px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .video-content p {
+            color: #888;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           AVANTAGES
+        ====================================================== */
+
+        .advantages {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+
+        .advantage {
+            padding: 30px;
+
+            background: white;
+
+            border:
+                1px solid #eee;
+
+            transition: .3s;
+        }
+
+
+        .advantage:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,.08);
+        }
+
+
+        .advantage i {
+            color: var(--gold);
+
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .advantage h3 {
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .advantage p {
+            color: #666;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FORMULAIRE
+        ====================================================== */
+
+        .form-section {
+            background: #f4f4f4;
+
+            color: #111;
+        }
+
+
+        .form-container {
+            max-width: 950px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 45px;
+
+            box-shadow:
+                0 20px 70px
+                rgba(0,0,0,.1);
+        }
+
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+
+        .form-group label {
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            border:
+                1px solid #ddd;
+
+            outline: none;
+
+            border-radius: 4px;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(212,175,55,.1);
+        }
+
+
+        .form-note {
+            color: #777;
+
+            font-size: 11px;
+
+            margin-top: 15px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact-section {
+            padding: 100px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1b1509,
+                    #070707
+                );
+        }
+
+
+        .contact-container {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+
+        .contact-container h2 {
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(35px,5vw,55px);
+
+            line-height: 1.1;
+
+            margin: 12px 0;
+        }
+
+
+        .contact-container p {
+            color: #999;
+
+            max-width: 700px;
+        }
+
+
+        .contact-number {
+            color: var(--gold);
+
+            font-weight: 800;
+        }
+
+
+        .whatsapp-big {
+            min-width: 220px;
+
+            padding: 20px 28px;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            background: #030303;
+
+            padding-top: 70px;
+        }
+
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+        }
+
+
+        .footer-column h3 {
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+
+            color: #777;
+
+            font-size: 12px;
+
+            margin: 8px 0;
+        }
+
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+
+        .footer-socials {
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+
+        .social {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #151515;
+
+            color: #aaa;
+
+            transition: .3s;
+        }
+
+
+        .social:hover {
+            background: var(--gold);
+
+            color: #111;
+        }
+
+
+        .copyright {
+            padding: 22px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 10px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.06);
+        }
+
+
+        /* =====================================================
+           WHATSAPP FLOTTANT
+        ====================================================== */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 62px;
+            height: 62px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--green);
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 31px;
+
+            z-index: 999;
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,.35);
+
+            animation:
+                whatsappPulse 2s infinite;
+        }
+
+
+        @keyframes whatsappPulse {
+
+            0% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(37,211,102,.45);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 15px
+                    rgba(37,211,102,0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(37,211,102,0);
+            }
+
+        }
+
+
+        /* =====================================================
+           BOUTON RETOUR EN HAUT
+        ====================================================== */
+
+        .top-button {
+            position: fixed;
+
+            right: 25px;
+            bottom: 100px;
+
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--gold);
+
+            color: #111;
+
+            border-radius: 4px;
+
+            z-index: 998;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: .3s;
+        }
+
+
+        .top-button.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* =====================================================
+           MESSAGE FORMULAIRE
+        ====================================================== */
+
+        .success-message {
+            display: none;
+
+            padding: 15px;
+
+            margin-bottom: 20px;
+
+            background: #e8fff0;
+
+            border-left:
+                4px solid
+                var(--green);
+
+            color: #116b32;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLETTE
+        ====================================================== */
+
+        @media(max-width: 1050px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .cocktail-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .training-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .training-card.featured {
+                transform: none;
+            }
+
+            .training-card.featured:hover {
+                transform: translateY(-7px);
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE MOBILE
+        ====================================================== */
+
+        @media(max-width: 760px) {
+
+            .nav {
+                min-height: 72px;
+            }
+
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 72px;
+                left: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 25px;
+
+                background:
+                    rgba(5,5,5,.98);
+
+                border-top:
+                    1px solid
+                    rgba(212,175,55,.15);
+            }
+
+
+            .nav-links.active {
+                display: flex;
+            }
+
+
+            .menu-button {
+                display: block;
+            }
+
+
+            .nav > .btn-whatsapp {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: 900px;
+            }
+
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+
+            .hero p {
+                font-size: 14px;
+            }
+
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+
+            .hero-info {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            .section {
+                padding: 80px 0;
+            }
+
+
+            .services-grid,
+            .training-grid,
+            .cocktail-grid,
+            .video-grid,
+            .advantages,
+            .numbers-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+
+            .cocktail-card {
+                height: 400px;
+            }
+
+
+            .form-container {
+                padding: 25px;
+            }
+
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .form-group.full-width {
+                grid-column: auto;
+            }
+
+
+            .contact-container {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .footer-grid {
+                gap: 30px;
+            }
+
+        }
+
+
+        /* =====================================================
+           PETIT MOBILE
+        ====================================================== */
+
+        @media(max-width: 450px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+
+                right: 18px;
+                bottom: 18px;
+            }
+
+
+            .top-button {
+                right: 18px;
+                bottom: 85px;
+            }
+
+        }
+
+    
+/* =====================================================
+   AJOUTS — SERVICES, ÉVÉNEMENTS, PAIEMENT, AVIS
+====================================================== */
+
+.services-grid.services-expanded{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.service-card .service-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:8px;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.7px;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.event-card{
+    background:linear-gradient(145deg,#181818,#0d0d0d);
+    border:1px solid rgba(212,175,55,.14);
+    padding:25px 20px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.event-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,175,55,.55);
+    box-shadow:var(--shadow);
+}
+
+.event-icon{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:rgba(212,175,55,.1);
+    color:var(--gold);
+    font-size:22px;
+    margin-bottom:17px;
+}
+
+.event-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.event-card p{
+    color:#999;
+    font-size:12px;
+    min-height:54px;
+}
+
+.event-price{
+    color:var(--gold);
+    font-size:24px;
+    font-weight:800;
+    margin:14px 0 17px;
+}
+
+.event-price small{
+    color:#999;
+    font-size:10px;
+    font-weight:500;
+}
+
+.info-panel{
+    margin-top:28px;
+    padding:22px;
+    border:1px solid rgba(212,175,55,.2);
+    background:rgba(212,175,55,.06);
+    border-radius:8px;
+}
+
+.info-panel p{
+    color:#ccc;
+    font-size:12px;
+    margin:5px 0;
+}
+
+.calendar-wrap{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+.calendar-card,.payment-card,.review-form,.review-card{
+    background:#141414;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:8px;
+    padding:28px;
+}
+
+.calendar-card h3,.payment-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    margin-bottom:14px;
+}
+
+.calendar-date{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin:20px 0;
+}
+
+.calendar-date .date-box{
+    width:70px;
+    min-width:70px;
+    text-align:center;
+    padding:10px 5px;
+    background:var(--gold);
+    color:#111;
+    border-radius:6px;
+    font-weight:900;
+}
+
+.calendar-date .date-box strong{
+    display:block;
+    font-size:25px;
+    line-height:1;
+}
+
+.calendar-date .date-box span{
+    font-size:9px;
+    text-transform:uppercase;
+}
+
+.calendar-meta{
+    color:#bbb;
+    font-size:12px;
+    margin:5px 0;
+}
+
+.payment-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.payment-method{
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:8px;
+    padding:18px;
+    background:#0e0e0e;
+}
+
+.payment-method h4{
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.mobile-money-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+}
+
+.mm-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:9px;
+    border-radius:6px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.mm-mpesa{background:#fff;color:#d71920}
+.mm-airtel{background:#e31b23;color:#fff}
+.mm-africell{background:#d7b3e8;color:#6b1d75}
+.mm-orange{background:#ff7900;color:#111}
+
+.cash-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:13px;
+    background:#181818;
+    border-radius:6px;
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review-card{
+    padding:22px;
+}
+
+.review-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.review-name{
+    font-weight:800;
+    font-size:13px;
+}
+
+.review-type{
+    color:#999;
+    font-size:9px;
+    text-transform:uppercase;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+.review-card p{
+    color:#bbb;
+    font-size:12px;
+}
+
+.review-form{
+    margin-top:25px;
+}
+
+.review-form .form-grid{
+    margin-bottom:0;
+}
+
+.social-section{
+    margin-top:35px;
+}
+
+.social-links-large{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.social-link-large{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 16px;
+    border-radius:6px;
+    font-size:11px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.social-facebook{background:#1877f2;color:#fff}
+.social-instagram{background:linear-gradient(45deg,#feda75,#d62976,#4f5bd5);color:#fff}
+.social-tiktok{background:#050505;color:#fff;border:1px solid #333}
+.social-whatsapp{background:#25D366;color:#fff}
+
+.social-link-large:hover{
+    transform:translateY(-3px);
+}
+.admin-footer-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--gold)!important;font-size:11px!important;font-weight:800!important;}
+
+.payment-condition{
+    margin-top:25px;
+}
+
+.form-note-strong{
+    color:var(--gold)!important;
+    font-weight:800;
+}
+
+.location-fields{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+@media(max-width:1000px){
+    .services-grid.services-expanded{grid-template-columns:repeat(2,1fr)}
+    .event-grid{grid-template-columns:repeat(2,1fr)}
+    .calendar-wrap{grid-template-columns:1fr}
+    .review-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:700px){
+    .services-grid.services-expanded,
+    .event-grid,
+    .review-grid,
+    .payment-grid,
+    .location-fields{grid-template-columns:1fr}
+    .mobile-money-list{grid-template-columns:1fr 1fr}
+    .social-links-large{display:grid;grid-template-columns:1fr 1fr}
+}
+
+
+/* ADMINISTRATION */
+.admin-nav-link{display:inline-flex;align-items:center;gap:7px;color:var(--gold);font-size:11px;font-weight:800;padding:9px 11px;border:1px solid rgba(212,175,55,.35);border-radius:5px;}
+.admin-nav-link:hover{background:var(--gold);color:#111}
+.admin-section{background:linear-gradient(135deg,#0a0a0a,#151008)}
+.admin-card{max-width:950px;margin:0 auto;background:#141414;border:1px solid rgba(212,175,55,.18);border-radius:10px;padding:30px;box-shadow:var(--shadow)}
+.admin-icon{width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:rgba(212,175,55,.1);color:var(--gold);font-size:25px;margin-bottom:15px}
+.admin-card h3{font-family:"Playfair Display",serif;font-size:26px;margin-bottom:8px}.admin-card>p{color:#999;font-size:12px;margin-bottom:18px}
+.admin-login-row{display:flex;gap:12px}.admin-login-row input{flex:1;padding:15px;border:1px solid #333;background:#0c0c0c;color:#fff;border-radius:5px;outline:none}.admin-login-row input:focus{border-color:var(--gold)}
+.admin-error,.admin-success{display:none;margin-top:12px;padding:12px;border-radius:5px;font-size:11px;font-weight:700}.admin-error{background:#3a1212;color:#ffb0b0}.admin-success{background:#123a22;color:#9ff0b8}
+.admin-dashboard[hidden],.admin-login-card[hidden]{display:none}.admin-dashboard-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:25px}.admin-dashboard-head h3{margin:0}.admin-dashboard-head p{margin:5px 0 0}.admin-actions{display:flex;gap:12px;flex-wrap:wrap}.admin-security-note{margin-top:18px;padding:14px;border-left:3px solid var(--gold);background:rgba(212,175,55,.06);color:#999;font-size:10px;line-height:1.6}.calendar-program{padding:15px;border:1px solid rgba(212,175,55,.14);background:#0d0d0d;color:#bbb;font-size:12px;border-radius:6px;line-height:1.7}
+@media(max-width:900px){.admin-nav-link{display:none}}@media(max-width:600px){.admin-card{padding:22px}.admin-login-row{flex-direction:column}.admin-dashboard-head{align-items:flex-start;flex-direction:column}.admin-actions .btn{width:100%}}
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header class="header" id="header">
+
+    <div class="container nav">
+
+        <a href="#accueil" class="logo">
+
+            <i class="fa-solid fa-martini-glass-citrus"></i>
+
+            <span>
+                ROYAL <strong>BAR</strong>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#accueil">Accueil</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#evenements">Événements</a>
+
+            <a href="#formations">Formations</a>
+
+            <a href="#cocktails">Cocktails</a>
+
+            <a href="#galerie">Galerie</a>
+
+            <a href="#videos">Vidéos</a>
+
+            <a href="#temoignages">Avis</a>
+
+            <a href="#inscription">Inscription</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+
+        <a href="#administration" class="admin-nav-link" title="Espace administrateur">
+            <i class="fa-solid fa-lock"></i> Admin
+        </a>
+
+
+        <a
+            href="https://wa.me/243814919250"
+            target="_blank"
+            class="btn btn-whatsapp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            WhatsApp
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Ouvrir le menu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+
+<section class="hero" id="accueil">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="eyebrow">
+                ROYAL BAR ACADEMY by ALPHA LAMARQUE 
+            </span>
+
+
+            <h1>
+                L'art du bar,
+                <span>la passion</span>
+                du cocktail.
+            </h1>
+
+
+            <p>
+                Bienvenue dans un univers où le savoir-faire,
+                l'élégance et la créativité se rencontrent.
+                Nous proposons des services professionnels
+                de bar ainsi que des formations pratiques
+                pour devenir un excellent barman avec ALPHA LAMARQUE.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#formations"
+                    class="btn btn-gold">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    Découvrir les formations
+
+                </a>
+
+
+                <a
+                    href="https://wa.me/243814919250?text=Bonjour%20Royal%20Bar%2C%20je%20voudrais%20avoir%20plus%20d'informations."
+                    target="_blank"
+                    class="btn btn-outline">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Nous contacter
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-info">
+
+                <div class="hero-info-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Formation pratique
+
+                </div>
+
+
+                <div class="hero-info-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Tarifs accessibles
+
+                </div>
+
+
+                <div class="hero-info-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Accompagnement professionnel
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CHIFFRES
+========================================================== -->
+
+<section class="numbers">
+
+    <div class="container numbers-grid">
+
+
+        <div class="number-box">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            <strong>100+</strong>
+
+            <span>
+                Élèves formés
+            </span>
+
+        </div>
+
+
+        <div class="number-box">
+
+            <i class="fa-solid fa-martini-glass"></i>
+
+            <strong>50+</strong>
+
+            <span>
+                Cocktails maîtrisés
+            </span>
+
+        </div>
+
+
+        <div class="number-box">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <strong>100+</strong>
+
+            <span>
+                Événements
+            </span>
+
+        </div>
+
+
+        <div class="number-box">
+
+            <i class="fa-solid fa-star"></i>
+
+            <strong>100%</strong>
+
+            <span>
+                Passion & qualité
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================== -->
+
+<section class="section section-dark" id="services">
+    <div class="container">
+
+        <div class="section-title">
+            <span class="small-title">NOTRE SAVOIR-FAIRE</span>
+            <h2>Des services de bar pensés pour l'excellence</h2>
+            <p>
+                Royal Bar Academy by ALPHA LAMARQUE propose des prestations
+                professionnelles adaptées aux particuliers, entreprises et événements.
+            </p>
+        </div>
+
+        <div class="services-grid services-expanded">
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+                <h3>Cocktails</h3>
+                <p>Cocktails classiques, signatures, créations originales et cocktails sans alcool, préparés avec soin.</p>
+                <a href="#cocktails">VOIR LES COCKTAILS <i class="fa-solid fa-arrow-right"></i></a>
+                <span class="service-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Création sur mesure</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Barman professionnel</h3>
+                <p>Mise à disposition d'un barman professionnel pour assurer un service élégant et efficace.</p>
+                <a href="#contact">RÉSERVER <i class="fa-solid fa-arrow-right"></i></a>
+                <span class="service-tag"><i class="fa-solid fa-star"></i> Service premium</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+                <h3>Bar à domicile</h3>
+                <p>Installation d'une véritable expérience cocktail directement chez vous, selon votre événement.</p>
+                <a href="#contact">CONTACTER <i class="fa-solid fa-arrow-right"></i></a>
+                <span class="service-tag"><i class="fa-solid fa-location-dot"></i> À Kinshasa</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <h3>Service de bar</h3>
+                <p>Prise en charge complète du bar : préparation, service, présentation, organisation et rangement.</p>
+                <a href="#evenements">VOIR LES ÉVÉNEMENTS <i class="fa-solid fa-arrow-right"></i></a>
+                <span class="service-tag"><i class="fa-solid fa-check"></i> Professionnel</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <h3>Prestation professionnelle</h3>
+                <p>Une formule complète pour cérémonies, entreprises, soirées privées et réceptions.</p>
+                <a href="#evenements">CHOISIR UN ÉVÉNEMENT <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-glass-water"></i></div>
+                <h3>Jus & boissons fraîches</h3>
+                <p>Jus naturels, boissons fraîches et compositions adaptées à l'ambiance et au budget de votre événement.</p>
+                <a href="#contact">DEMANDER UN DEVIS <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-lemon"></i></div>
+                <h3>Smoothies & milkshakes</h3>
+                <p>Smoothies, milkshakes et créations fruitées préparés avec des ingrédients sélectionnés.</p>
+                <a href="#contact">NOUS CONTACTER <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                <h3>Carte & conseil bar</h3>
+                <p>Conseil pour organiser votre carte boissons, vos quantités et votre expérience cocktail.</p>
+                <a href="#contact">PARLER À ALPHA LAMARQUE <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FORMATIONS
+========================================================== -->
+
+<section
+    class="section training-section"
+    id="formations">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                DEVENEZ PROFESSIONNEL
+            </span>
+
+            <h2>
+                Nos formations en bar & mixologie
+            </h2>
+
+            <p>
+                Des formations accessibles, pratiques
+                et orientées vers les compétences
+                réellement utilisées derrière un bar.
+            </p>
+
+        </div>
+
+
+        <div class="training-grid">
+
+
+            <!-- FORMATION 1 -->
+
+            <div class="training-card">
+
+                <span class="badge">
+                    DÉBUTANT
+                </span>
+
+
+                <h3>
+                    Initiation Barman
+                </h3>
+
+
+                <p class="training-description">
+                    Pour découvrir le métier et apprendre
+                    les bases essentielles.
+                </p>
+
+
+                <div class="price">
+                    50$
+                    <small>
+                        / formation
+                    </small>
+                </div>
+
+
+                <ul class="training-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Introduction au métier de barman
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Connaissance du matériel
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Techniques de service
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Préparation des cocktails
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Hygiène et organisation
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Attestation
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#inscription"
+                    class="btn btn-gold full">
+
+                    S'inscrire
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FORMATION 2 -->
+
+            <div class="training-card featured">
+
+                <span class="badge">
+                    ⭐ MEILLEUR CHOIX
+                </span>
+
+
+                <h3>
+                    Barman Professionnel
+                </h3>
+
+
+                <p class="training-description">
+                    Une formation complète pour maîtriser
+                    les techniques professionnelles.
+                </p>
+
+
+                <div class="price">
+                    75$
+                    <small>
+                        / formation
+                    </small>
+                </div>
+
+
+                <ul class="training-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Tout le programme débutant
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Cocktails classiques
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Techniques de shaker
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Garnitures et présentation
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Service client
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mise en situation pratique
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Attestation professionnelle
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#inscription"
+                    class="btn btn-gold full">
+
+                    S'inscrire maintenant
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FORMATION 3 -->
+
+            <div class="training-card">
+
+                <span class="badge">
+                    AVANCÉ
+                </span>
+
+
+                <h3>
+                    Mixologie Pro
+                </h3>
+
+
+                <p class="training-description">
+                    Pour perfectionner votre créativité
+                    et développer votre niveau professionnel.
+                </p>
+
+
+                <div class="price">
+                    100$
+                    <small>
+                        / formation
+                    </small>
+                </div>
+
+
+                <ul class="training-list">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mixologie avancée
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Création de cocktails
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Équilibre des saveurs
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Présentation premium
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Gestion d'un bar
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Création de carte cocktails
+                    </li>
+
+                </ul>
+
+
+                <a
+                    href="#inscription"
+                    class="btn btn-gold full">
+
+                    S'inscrire
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ÉVÉNEMENTS
+========================================================== -->
+
+<section class="section" id="evenements">
+    <div class="container">
+
+        <div class="section-title">
+            <span class="small-title">NOS ÉVÉNEMENTS</span>
+            <h2>Des prestations pour chaque occasion</h2>
+            <p>
+                Des tarifs indicatifs accessibles à Kinshasa. Le devis final dépend
+                du nombre d'invités, du lieu, de la durée et de la formule choisie.
+            </p>
+        </div>
+
+        <div class="event-grid">
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-ring"></i></div>
+                <h3>Mariage religieux</h3>
+                <p>Service bar élégant pour votre cérémonie et votre réception.</p>
+                <div class="event-price">5$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20mariage%20religieux."><i class="fa-brands fa-whatsapp"></i> Demander un devis</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <h3>Mariage coutumier</h3>
+                <p>Une formule conviviale pour les réceptions familiales.</p>
+                <div class="event-price">6$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20mariage%20coutumier."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                <h3>Anniversaire</h3>
+                <p>Cocktails, mocktails et service bar pour une fête réussie.</p>
+                <div class="event-price">5$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20anniversaire."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-baby"></i></div>
+                <h3>Baptême</h3>
+                <p>Boissons fraîches et cocktails sans alcool pour toute la famille.</p>
+                <div class="event-price">4,50$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20bapteme."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Défense / Graduation</h3>
+                <p>Une formule accessible pour célébrer une réussite académique.</p>
+                <div class="event-price">4$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20graduation."><i class="fa-brands fa-whatsapp"></i> Demander un devis</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Événement d'entreprise</h3>
+                <p>Service professionnel et présentation soignée pour vos équipes et invités.</p>
+                <div class="event-price">7$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20evenement%20d%27entreprise."><i class="fa-brands fa-whatsapp"></i> Demander un devis</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-music"></i></div>
+                <h3>Soirée privée</h3>
+                <p>Une expérience cocktail adaptée à votre ambiance et à vos invités.</p>
+                <div class="event-price">6$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20soiree%20privee."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Fiançailles</h3>
+                <p>Une prestation élégante pour votre cérémonie familiale.</p>
+                <div class="event-price">5$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20des%20fiancailles."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-water"></i></div>
+                <h3>Pool Party</h3>
+                <p>Cocktails rafraîchissants et service bar pour vos journées festives.</p>
+                <div class="event-price">6$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20pool%20party."><i class="fa-brands fa-whatsapp"></i> Réserver</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-people-group"></i></div>
+                <h3>Fête familiale</h3>
+                <p>Une formule conviviale pour vos rencontres et célébrations.</p>
+                <div class="event-price">5$ <small>/ personne</small></div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20fete%20familiale."><i class="fa-brands fa-whatsapp"></i> Demander un devis</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-gift"></i></div>
+                <h3>Cérémonie</h3>
+                <p>Service de bar adapté aux cérémonies et réceptions diverses.</p>
+                <div class="event-price">Sur devis</div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20une%20ceremonie."><i class="fa-brands fa-whatsapp"></i> Demander un devis</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon"><i class="fa-solid fa-house"></i></div>
+                <h3>Événement à domicile</h3>
+                <p>Installation et service directement au lieu de votre événement.</p>
+                <div class="event-price">Sur devis</div>
+                <a class="btn btn-whatsapp full" target="_blank" href="https://wa.me/243814919250?text=Bonjour%20Alpha%20Lamarque%2C%20je%20souhaite%20un%20devis%20pour%20un%20evenement%20a%20domicile."><i class="fa-brands fa-whatsapp"></i> Nous contacter</a>
+            </div>
+
+        </div>
+
+        <div class="info-panel">
+            <p><i class="fa-solid fa-circle-info"></i> <strong>Important :</strong> les prix affichés sont des tarifs indicatifs par personne. Le devis final est établi selon le nombre d'invités, le lieu, la durée et les prestations choisies.</p>
+            <p><i class="fa-solid fa-money-bill-wave"></i> <strong>Réservation :</strong> 50 % du montant de la prestation doit être versé avant le début du service pour confirmer la réservation.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     CALENDRIER DES FORMATIONS
+========================================================== -->
+
+<section class="section section-dark" id="calendrier">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">CALENDRIER</span>
+            <h2>Prochaines formations</h2>
+            <p>Consultez les prochaines dates et horaires de Royal Bar Academy.</p>
+        </div>
+
+        <div class="calendar-wrap">
+            <div class="calendar-card">
+                <h3><i class="fa-solid fa-calendar-days" style="color:var(--gold);"></i> Prochaine session</h3>
+                <div class="calendar-date">
+                    <div class="date-box">
+                        <strong id="calendarDay">À</strong>
+                        <span id="calendarMonth">VENIR</span>
+                    </div>
+                    <div>
+                        <p class="calendar-meta"><i class="fa-solid fa-calendar"></i> Date : <strong id="calendarDateText">À confirmer</strong></p>
+                        <p class="calendar-meta"><i class="fa-solid fa-clock"></i> Horaires : <strong id="calendarTimeText">À confirmer</strong></p>
+                        <p class="calendar-meta"><i class="fa-solid fa-location-dot"></i> Lieu : <strong id="calendarLocationText">À confirmer</strong></p>
+                    </div>
+                </div>
+                <div class="calendar-program" id="calendarProgramText">Les prochaines dates seront publiées ici.</div>
+            </div>
+
+            <div class="payment-card">
+                <h3><i class="fa-solid fa-wallet" style="color:var(--gold);"></i> Modes de paiement</h3>
+                <div class="payment-method">
+                    <h4><i class="fa-solid fa-mobile-screen-button"></i> MOBILE MONEY</h4>
+                    <div class="mobile-money-list">
+                        <div class="mm-item mm-mpesa"><i class="fa-solid fa-mobile-screen-button"></i> M-Pesa</div>
+                        <div class="mm-item mm-airtel"><i class="fa-solid fa-mobile-screen-button"></i> Airtel Money</div>
+                        <div class="mm-item mm-africell"><i class="fa-solid fa-mobile-screen-button"></i> Africell Money</div>
+                        <div class="mm-item mm-orange"><i class="fa-solid fa-mobile-screen-button"></i> Orange Money</div>
+                    </div>
+                </div>
+                <div class="payment-method" style="margin-top:15px;">
+                    <h4><i class="fa-solid fa-money-bill-wave"></i> PAIEMENT CASH</h4>
+                    <div class="cash-item"><i class="fa-solid fa-money-bill-wave"></i> Paiement en espèces</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel payment-condition">
+            <p><i class="fa-solid fa-graduation-cap"></i> <strong>Apprenants :</strong> 50 % du montant demandé doit être versé avant le début de la formation afin de confirmer l'inscription.</p>
+            <p><i class="fa-solid fa-champagne-glasses"></i> <strong>Clients :</strong> 50 % du montant demandé doit être versé avant le début du service afin de confirmer la réservation.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ESPACE ADMINISTRATEUR
+========================================================== -->
+
+<section class="section admin-section" id="administration">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">ESPACE ADMINISTRATEUR</span>
+            <h2><i class="fa-solid fa-lock"></i> Gestion des formations</h2>
+            <p>Modifiez les dates, les horaires, le lieu et les informations de la prochaine session depuis votre téléphone.</p>
+        </div>
+
+        <div class="admin-card" id="adminLoginCard">
+            <div class="admin-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Accès administrateur</h3>
+            <p>Entrez le mot de passe administrateur pour ouvrir le tableau de bord.</p>
+            <div class="admin-login-row">
+                <input type="password" id="adminPassword" placeholder="Mot de passe" autocomplete="current-password">
+                <button class="btn btn-gold" type="button" id="adminLoginBtn"><i class="fa-solid fa-right-to-bracket"></i> Ouvrir</button>
+            </div>
+            <div id="adminLoginError" class="admin-error">Mot de passe incorrect.</div>
+        </div>
+
+        <div class="admin-card admin-dashboard" id="adminDashboard" hidden>
+            <div class="admin-dashboard-head">
+                <div>
+                    <h3><i class="fa-solid fa-calendar-pen"></i> Tableau de bord</h3>
+                    <p>Les modifications sont enregistrées sur cet appareil.</p>
+                </div>
+                <button class="btn btn-outline admin-logout" type="button" id="adminLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Fermer</button>
+            </div>
+
+            <div class="form-grid admin-form-grid">
+                <div class="form-group">
+                    <label for="adminTrainingName">FORMATION</label>
+                    <input id="adminTrainingName" type="text" placeholder="Ex : Barman Professionnel">
+                </div>
+                <div class="form-group">
+                    <label for="adminDate">DATE</label>
+                    <input id="adminDate" type="date">
+                </div>
+                <div class="form-group">
+                    <label for="adminTime">HORAIRES</label>
+                    <input id="adminTime" type="text" placeholder="Ex : 08h00–11h00 et 13h00–15h00">
+                </div>
+                <div class="form-group">
+                    <label for="adminLocation">LIEU</label>
+                    <input id="adminLocation" type="text" placeholder="Ex : Kinshasa, commune, quartier...">
+                </div>
+                <div class="form-group full-width">
+                    <label for="adminProgram">INFORMATIONS / PROGRAMME</label>
+                    <textarea id="adminProgram" rows="4" placeholder="Informations complémentaires sur la session..."></textarea>
+                </div>
+                <div class="form-group full-width admin-actions">
+                    <button class="btn btn-gold" type="button" id="adminSaveBtn"><i class="fa-solid fa-floppy-disk"></i> Enregistrer les changements</button>
+                    <button class="btn btn-outline" type="button" id="adminResetBtn"><i class="fa-solid fa-rotate-left"></i> Réinitialiser</button>
+                </div>
+            </div>
+            <div id="adminSaveStatus" class="admin-success">Modifications enregistrées.</div>
+            <div class="admin-security-note"><i class="fa-solid fa-circle-info"></i> Cette version sans base de données conserve les changements dans le navigateur de l'administrateur. Pour que les dates modifiées soient visibles automatiquement par tous les visiteurs depuis n'importe quel appareil, il faudra ensuite connecter une base de données.</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     COCKTAILS
+========================================================== -->
+
+<section
+    class="section"
+    id="cocktails">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                NOS CRÉATIONS
+            </span>
+
+            <h2>
+                L'univers des cocktails
+            </h2>
+
+            <p>
+                Une sélection de créations qui
+                représentent notre passion pour
+                l'art du cocktail.
+            </p>
+
+        </div>
+
+
+        <div class="cocktail-grid">
+
+
+            <div class="cocktail-card">
+
+                <img
+                    src="rainbow.jpg"
+                    alt="Royal Rainbow">
+
+                <div class="cocktail-overlay">
+
+                    <h3>
+                        Royal Rainbow
+                    </h3>
+
+                    <p>
+                        Signature cocktail
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cocktail-card">
+
+                <img
+                    src="tropical.jpg"
+                    alt="Tropical Dream">
+
+                <div class="cocktail-overlay">
+
+                    <h3>
+                        Tropical Dream
+                    </h3>
+
+                    <p>
+                        Création tropicale
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cocktail-card">
+
+                <img
+                    src="citrus.jpg"
+                    alt="Golden Passion">
+
+                <div class="cocktail-overlay">
+
+                    <h3>
+                        Citrus Melon
+                    </h3>
+
+                    <p>
+                        Cocktail premium
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cocktail-card">
+
+                <img
+                    src="mojito1.jpg"
+                    alt="Classic Mojito">
+
+                <div class="cocktail-overlay">
+
+                    <h3>
+                        Classic Mojito
+                    </h3>
+
+                    <p>
+                        Grand classique
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AVANTAGES
+========================================================== -->
+
+<section
+    class="section section-light">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                POURQUOI NOUS CHOISIR
+            </span>
+
+            <h2>
+                Une formation qui fait la différence
+            </h2>
+
+            <p>
+                Notre objectif est de vous donner
+                des compétences directement utilisables
+                dans le monde professionnel.
+            </p>
+
+        </div>
+
+
+        <div class="advantages">
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-hands-bubbles"></i>
+
+                <h3>
+                    Formation pratique
+                </h3>
+
+                <p>
+                    Vous apprenez en pratiquant les
+                    techniques de préparation, de service
+                    et de présentation.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <h3>
+                    Tarif imbattable
+                </h3>
+
+                <p>
+                    Des prix étudiés pour rendre
+                    la formation professionnelle
+                    accessible au plus grand nombre.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                <h3>
+                    Attestation
+                </h3>
+
+                <p>
+                    Une attestation de formation peut
+                    être délivrée à la fin du programme
+                    selon les conditions de la formation.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-user-group"></i>
+
+                <h3>
+                    Accompagnement
+                </h3>
+
+                <p>
+                    Notre équipe vous accompagne pendant
+                    votre apprentissage.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                <h3>
+                    Créativité
+                </h3>
+
+                <p>
+                    Apprenez à créer et présenter
+                    des cocktails qui se démarquent.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <h3>
+                    Orientation professionnelle
+                </h3>
+
+                <p>
+                    Développez des compétences utiles
+                    pour travailler dans les bars,
+                    restaurants et événements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALERIE
+========================================================== -->
+
+<section
+    class="section section-dark"
+    id="galerie">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                GALERIE
+            </span>
+
+            <h2>
+                Quelques moments Royal Bar
+            </h2>
+
+            <p>
+                Remplace les images ci-dessous par
+                tes propres photos professionnelles.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="service bar.png"
+                    alt="Service de bar">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="barman2.jpg"
+                    alt="Cocktail">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="formation.jpg"
+                    alt="Formation">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="mojito1.jpg"
+                    alt="Barman">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="evenement2.jpg"
+                    alt="Événement">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="mj.jpg"
+                    alt="Mixologie">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VIDEOS
+========================================================== -->
+
+<section
+    class="section video-section"
+    id="videos">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                NOS VIDÉOS
+            </span>
+
+            <h2>
+                Découvrez notre travail
+            </h2>
+
+            <p>
+                Présente tes techniques, tes formations
+                et tes événements directement sur ton site.
+            </p>
+
+        </div>
+
+
+        <div class="video-grid">
+
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    poster="tropical.jpg">
+
+                    <source
+                        src="top.mp4"
+                        type="video/mp4">
+
+                    Votre navigateur ne supporte pas
+                    la lecture vidéo.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <h3>
+                        Préparation d'un cocktail
+                    </h3>
+
+                    <p>
+                        Découvrez quelques-unes de nos
+                        techniques de préparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    poster="citrus.jpg">
+
+                    <source
+                        src="pasteque.mp4"
+                        type="video/mp4">
+
+                    Votre navigateur ne supporte pas
+                    la lecture vidéo.
+
+                </video>
+
+
+                <div class="video-content">
+
+                    <h3>
+                        Formation pratique
+                    </h3>
+
+                    <p>
+                        Découvrez l'ambiance de nos
+                        séances de formation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TÉMOIGNAGES
+========================================================== -->
+
+<section class="section section-dark" id="temoignages">
+    <div class="container">
+
+        <div class="section-title">
+            <span class="small-title">TÉMOIGNAGES</span>
+            <h2>Ils nous ont fait confiance</h2>
+            <p>
+                Découvrez quelques retours de clients et d'apprenants de Royal Bar Academy.
+            </p>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Sarah Mukadi</div><div class="review-type">Client</div></div><div class="stars">★★★☆☆</div></div>
+                <p>« Nous a donné 3 étoiles pour le service. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Lauriane Mbuyi</div><div class="review-type">Client</div></div><div class="stars">★★★☆☆</div></div>
+                <p>« Nous a donné 3 étoiles pour le service. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Patrick Kyungu</div><div class="review-type">Client</div></div><div class="stars">★★★☆☆</div></div>
+                <p>« Nous a donné 3 étoiles pour le service. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Serge Kola</div><div class="review-type">Client</div></div><div class="stars">★★★☆☆</div></div>
+                <p>« Nous a donné 3 étoiles pour le service. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Henock Nsimba</div><div class="review-type">Client</div></div><div class="stars">★★★☆☆</div></div>
+                <p>« Nous a donné 3 étoiles pour le service. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Cédric Ngoi</div><div class="review-type">Apprenant</div></div><div class="stars">★★★★★</div></div>
+                <p>« Bonne formation suivie avec les autres apprenants. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Arlette Mbo</div><div class="review-type">Apprenante</div></div><div class="stars">★★★★★</div></div>
+                <p>« Témoignage d'apprenant à compléter selon son retour. »</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-head"><div><div class="review-name">Carine Mampamboli</div><div class="review-type">Apprenante</div></div><div class="stars">★★★★★</div></div>
+                <p>« Témoignage d'apprenant à compléter selon son retour. »</p>
+            </div>
+
+        </div>
+
+        <div class="review-form">
+            <h3 style="font-family:'Playfair Display',serif;font-size:27px;margin-bottom:8px;">⭐ Laisser votre avis</h3>
+            <p style="color:#999;font-size:12px;margin-bottom:20px;">
+                Votre avis pourra être publié après validation par Royal Bar Academy.
+            </p>
+
+            <form id="reviewForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="avisNom">NOM COMPLET *</label>
+                        <input id="avisNom" type="text" required placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avisType">VOUS ÊTES *</label>
+                        <select id="avisType" required>
+                            <option value="">Choisir</option>
+                            <option>Client</option>
+                            <option>Apprenant</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avisNote">NOTE *</label>
+                        <select id="avisNote" required>
+                            <option value="">Choisir une note</option>
+                            <option value="5">★★★★★ — 5/5</option>
+                            <option value="4">★★★★☆ — 4/5</option>
+                            <option value="3">★★★☆☆ — 3/5</option>
+                            <option value="2">★★☆☆☆ — 2/5</option>
+                            <option value="1">★☆☆☆☆ — 1/5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="avisMessage">VOTRE AVIS *</label>
+                        <textarea id="avisMessage" rows="4" required placeholder="Écrivez votre expérience..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button class="btn btn-gold full" type="submit">
+                            <i class="fa-solid fa-paper-plane"></i> Envoyer mon avis
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="reviewStatus" class="success-message" style="margin-top:15px;">
+                Merci pour votre avis ⭐ Il sera soumis à validation.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     INSCRIPTION
+========================================================== -->
+
+<section
+    class="section form-section"
+    id="inscription">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <span class="small-title">
+                INSCRIPTION
+            </span>
+
+            <h2>
+                Réservez votre formation
+            </h2>
+
+            <p>
+                Remplissez le formulaire. Vos informations
+                seront ensuite transmises à notre équipe
+                via WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="form-container">
+
+
+            <div
+                class="success-message"
+                id="successMessage">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Votre demande est prête.
+                Cliquez sur le bouton WhatsApp pour
+                l'envoyer à Royal Bar Academy.
+
+            </div>
+
+
+            <form id="registrationForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="nom">
+                            NOM COMPLET *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nom"
+                            name="nom"
+                            placeholder="Ex : Jean Mukendi"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telephone">
+                            TÉLÉPHONE / WHATSAPP *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telephone"
+                            name="telephone"
+                            placeholder="Ex : 0812345678"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="votre@email.com">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="formation">
+                            FORMATION CHOISIE *
+                        </label>
+
+                        <select
+                            id="formation"
+                            name="formation"
+                            required>
+
+                            <option value="">
+                                Choisir une formation
+                            </option>
+
+                            <option value="Initiation Barman - 50$">
+                                Initiation Barman — 50$
+                            </option>
+
+                            <option value="Barman Professionnel - 75$">
+                                Barman Professionnel — 75$
+                            </option>
+
+                            <option value="Mixologie Pro - 100$">
+                                Mixologie Pro — 100$
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="residence"><i class="fa-solid fa-location-dot"></i> VILLE / COMMUNE DE RÉSIDENCE *</label>
+                        <input type="text" id="residence" name="residence" placeholder="Ex : Kinshasa / Limete" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paiement"><i class="fa-solid fa-wallet"></i> MODE DE PAIEMENT *</label>
+                        <select id="paiement" name="paiement" required>
+                            <option value="">Choisir un mode</option>
+                            <option value="Mobile Money">📱 Mobile Money</option>
+                            <option value="Cash">💵 Cash</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">MESSAGE</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Écrivez votre message..."></textarea>
+
+                    </div>
+
+
+                    <div class="form-group full-width">
+
+                        <button
+                            type="submit"
+                            class="btn btn-gold full">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            Envoyer mon inscription sur WhatsApp
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="form-note form-note-strong">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Bonjour 👋 Merci pour votre confiance. N'oubliez pas de verser
+                    <strong>50 % du montant demandé avant le début de la formation</strong>
+                    afin de confirmer votre inscription.
+                </p>
+
+                <p class="form-note">
+                    <i class="fa-solid fa-lock"></i>
+                    Vos informations sont utilisées uniquement pour traiter votre demande d'inscription.
+                </p>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DEMANDE DE PRESTATION
+========================================================== -->
+
+<section class="section" id="devis">
+    <div class="container">
+
+        <div class="section-title">
+            <span class="small-title">ÉVÉNEMENT</span>
+            <h2>Demander une prestation</h2>
+            <p>Indiquez le lieu de votre événement afin que nous puissions vous proposer une formule adaptée.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="eventForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="clientNom">NOM COMPLET *</label>
+                        <input id="clientNom" type="text" required placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientTel">TÉLÉPHONE / WHATSAPP *</label>
+                        <input id="clientTel" type="tel" required placeholder="0812345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventType">TYPE D'ÉVÉNEMENT *</label>
+                        <select id="eventType" required>
+                            <option value="">Choisir</option>
+                            <option>Mariage religieux — 5$ / personne</option>
+                            <option>Mariage coutumier — 6$ / personne</option>
+                            <option>Anniversaire — 5$ / personne</option>
+                            <option>Baptême — 4,50$ / personne</option>
+                            <option>Défense / Graduation — 4$ / personne</option>
+                            <option>Événement d'entreprise — 7$ / personne</option>
+                            <option>Soirée privée — 6$ / personne</option>
+                            <option>Fiançailles — 5$ / personne</option>
+                            <option>Pool Party — 6$ / personne</option>
+                            <option>Fête familiale — 5$ / personne</option>
+                            <option>Cérémonie — Sur devis</option>
+                            <option>Événement à domicile — Sur devis</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventGuests">NOMBRE DE PERSONNES *</label>
+                        <input id="eventGuests" type="number" min="1" required placeholder="Ex : 100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDate"><i class="fa-solid fa-calendar"></i> DATE *</label>
+                        <input id="eventDate" type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventTime"><i class="fa-solid fa-clock"></i> HEURE *</label>
+                        <input id="eventTime" type="time" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="eventLocation"><i class="fa-solid fa-location-dot"></i> LIEU DE L'ÉVÉNEMENT *</label>
+                        <input id="eventLocation" type="text" required placeholder="Ex : Kinshasa, commune, quartier, salle...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventPayment">MODE DE PAIEMENT *</label>
+                        <select id="eventPayment" required>
+                            <option value="">Choisir</option>
+                            <option>📱 Mobile Money</option>
+                            <option>💵 Cash</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="eventMessage">MESSAGE</label>
+                        <textarea id="eventMessage" rows="4" placeholder="Précisez vos besoins, boissons, cocktails ou autres options..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn btn-whatsapp full">
+                            <i class="fa-brands fa-whatsapp"></i> Envoyer ma demande sur WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <p class="form-note form-note-strong">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Bonjour 👋 Merci pour votre confiance. N'oubliez pas de verser
+                    <strong>50 % du montant demandé avant le début du service</strong>
+                    afin de confirmer votre réservation.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================== -->
+
+<section
+    class="contact-section"
+    id="contact">
+
+    <div class="container contact-container">
+
+
+        <div>
+
+            <span class="eyebrow">
+                CONTACT DIRECT
+            </span>
+
+
+            <h2>
+                Parlons de votre projet.
+            </h2>
+
+
+            <p>
+                Pour une formation, une réservation,
+                un événement ou une demande de devis,
+                contactez directement Royal Bar Academy
+                sur WhatsApp.
+            </p>
+
+
+            <p style="margin-top:15px;">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp :
+
+                <span class="contact-number">
+                    +243 814 919 250
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/243814919250?text=Bonjour%20Royal%20Bar%20Academy%2C%20je%20souhaite%20avoir%20plus%20d'informations."
+            target="_blank"
+            class="btn btn-whatsapp whatsapp-big">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Écrire sur WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-column">
+
+            <a href="#accueil" class="logo">
+
+                <i class="fa-solid fa-martini-glass-citrus"></i>
+
+                <span>
+                    ROYAL <strong>BAR</strong>
+                </span>
+
+            </a>
+
+
+            <p>
+                Services professionnels de bar,
+                cocktails et formations en barman
+                et mixologie.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="https://wa.me/243814919250" target="_blank" class="social" aria-label="WhatsApp Alpha Lamarque">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.facebook.com/alphalamarque" target="_blank" class="social" aria-label="Facebook Alpha Lamarque">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/alphalamarque" target="_blank" class="social" aria-label="Instagram Alpha Lamarque">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.tiktok.com/@alphalamarque" target="_blank" class="social" aria-label="TikTok Alpha Lamarque">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Navigation
+            </h3>
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#evenements">
+                Événements
+            </a>
+
+            <a href="#formations">
+                Formations
+            </a>
+
+            <a href="#calendrier">
+                Calendrier
+            </a>
+
+            <a href="#cocktails">
+                Cocktails
+            </a>
+
+            <a href="#temoignages">
+                Avis
+            </a>
+
+            <a href="#inscription">
+                Inscription
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                <i class="fa-brands fa-whatsapp"></i>
+                +243 814 919 250
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Kinshasa, République démocratique du Congo
+            </p>
+
+            <div class="social-section">
+                <div class="social-links-large">
+                    <a class="social-link-large social-tiktok" href="https://www.tiktok.com/@alphalamarque" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i> TikTok — Alpha Lamarque
+                    </a>
+                    <a class="social-link-large social-facebook" href="https://www.facebook.com/alphalamarque" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook — Alpha Lamarque
+                    </a>
+                    <a class="social-link-large social-instagram" href="https://www.instagram.com/alphalamarque" target="_blank">
+                        <i class="fa-brands fa-instagram"></i> Instagram — Alpha Lamarque
+                    </a>
+                    <a class="social-link-large social-whatsapp" href="https://wa.me/243814919250" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp — 081 491 9250
+                    </a>
+                </div>
+            </div>
+
+            <a href="#administration" class="admin-footer-link">
+                <i class="fa-solid fa-lock"></i> Espace administrateur
+            </a>
+
+            <a
+                href="https://wa.me/243814919250"
+                target="_blank">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Nous contacter
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Royal Bar Academy by ALPHA LAMARQUE.
+        Tous droits réservés.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP FLOTTANT
+========================================================== -->
+
+<a
+    href="https://wa.me/243814919250?text=Bonjour%20Royal%20Bar%20Academy%2C%20je%20viens%20de%20visiter%20votre%20site."
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="Contacter Royal Bar sur WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =========================================================
+     RETOUR EN HAUT
+========================================================== -->
+
+<a
+    href="#accueil"
+    class="top-button"
+    id="topButton">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</a>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+(function(){
+    const WA = "243814919250";
+    const ADMIN_PASSWORD = "ROYAL2026";
+    const STORAGE_KEY = "royalBarTrainingSchedule";
+    const REVIEW_KEY = "royalBarReviews";
+
+    const defaultSchedule = {
+        trainingName: "Prochaine formation",
+        date: "",
+        time: "À confirmer",
+        location: "À confirmer",
+        program: "Les prochaines dates seront publiées ici."
+    };
+
+    function getSchedule(){
+        try { return {...defaultSchedule, ...(JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"))}; }
+        catch(e){ return {...defaultSchedule}; }
+    }
+    function saveSchedule(data){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+
+    function formatScheduleDate(value){
+        if(!value) return {day:"À", month:"VENIR", full:"À confirmer"};
+        const d = new Date(value + "T12:00:00");
+        const months = ["JAN","FÉV","MAR","AVR","MAI","JUIN","JUIL","AOÛ","SEP","OCT","NOV","DÉC"];
+        return {day:String(d.getDate()), month:months[d.getMonth()], full:d.toLocaleDateString("fr-FR", {day:"2-digit", month:"long", year:"numeric"})};
+    }
+    function renderSchedule(){
+        const s=getSchedule(), f=formatScheduleDate(s.date);
+        const set=(id,val)=>{const el=document.getElementById(id); if(el) el.textContent=val;};
+        set("calendarDay",f.day); set("calendarMonth",f.month); set("calendarDateText",f.full); set("calendarTimeText",s.time || "À confirmer"); set("calendarLocationText",s.location || "À confirmer");
+        const program=document.getElementById("calendarProgramText");
+        if(program) program.innerHTML='<strong>'+escapeHtml(s.trainingName || "Prochaine formation")+'</strong><br>'+escapeHtml(s.program || defaultSchedule.program);
+    }
+    function escapeHtml(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+
+    // Admin
+    const loginBtn=document.getElementById("adminLoginBtn"), password=document.getElementById("adminPassword");
+    const loginCard=document.getElementById("adminLoginCard"), dashboard=document.getElementById("adminDashboard"), loginError=document.getElementById("adminLoginError");
+    function loadAdminFields(){ const s=getSchedule(); document.getElementById("adminTrainingName").value=s.trainingName; document.getElementById("adminDate").value=s.date; document.getElementById("adminTime").value=s.time; document.getElementById("adminLocation").value=s.location; document.getElementById("adminProgram").value=s.program; }
+    function openAdmin(){ loginCard.hidden=true; dashboard.hidden=false; loadAdminFields(); }
+    if(loginBtn) loginBtn.addEventListener("click",()=>{ if(password.value===ADMIN_PASSWORD){loginError.style.display="none"; openAdmin();} else loginError.style.display="block"; });
+    if(password) password.addEventListener("keydown",e=>{if(e.key==="Enter") loginBtn.click();});
+    const logout=document.getElementById("adminLogoutBtn"); if(logout) logout.addEventListener("click",()=>{dashboard.hidden=true;loginCard.hidden=false;password.value="";});
+    const saveBtn=document.getElementById("adminSaveBtn");
+    if(saveBtn) saveBtn.addEventListener("click",()=>{
+        saveSchedule({trainingName:document.getElementById("adminTrainingName").value.trim()||defaultSchedule.trainingName,date:document.getElementById("adminDate").value,time:document.getElementById("adminTime").value.trim()||defaultSchedule.time,location:document.getElementById("adminLocation").value.trim()||defaultSchedule.location,program:document.getElementById("adminProgram").value.trim()||defaultSchedule.program});
+        renderSchedule(); const st=document.getElementById("adminSaveStatus"); st.style.display="block"; setTimeout(()=>st.style.display="none",3000);
+    });
+    const resetBtn=document.getElementById("adminResetBtn"); if(resetBtn) resetBtn.addEventListener("click",()=>{localStorage.removeItem(STORAGE_KEY);loadAdminFields();renderSchedule();});
+    renderSchedule();
+
+    // Mobile menu
+    const menuButton=document.getElementById("menuButton"), navLinks=document.getElementById("navLinks");
+    if(menuButton && navLinks){menuButton.addEventListener("click",()=>{navLinks.classList.toggle("active");const i=menuButton.querySelector("i");i.classList.toggle("fa-bars");i.classList.toggle("fa-xmark");}); navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("active");const i=menuButton.querySelector("i");i.classList.add("fa-bars");i.classList.remove("fa-xmark");}));}
+
+    // Header + top button
+    const header=document.getElementById("header"), topButton=document.getElementById("topButton");
+    window.addEventListener("scroll",()=>{if(window.scrollY>50){header.classList.add("scrolled");topButton.classList.add("show");}else{header.classList.remove("scrolled");topButton.classList.remove("show");}});
+
+    // Registration -> WhatsApp
+    const reg=document.getElementById("registrationForm");
+    if(reg) reg.addEventListener("submit",e=>{e.preventDefault();
+        const text=`Bonjour 👋 Royal Bar Academy by ALPHA LAMARQUE,\n\nJe souhaite m'inscrire à une formation.\n\nNom : ${document.getElementById("nom").value.trim()}\nTéléphone / WhatsApp : ${document.getElementById("telephone").value.trim()}\nEmail : ${document.getElementById("email").value.trim()||"Non renseigné"}\nFormation : ${document.getElementById("formation").value}\nLieu de résidence : ${document.getElementById("residence").value.trim()}\nMode de paiement : ${document.getElementById("paiement").value}\nMessage : ${document.getElementById("message").value.trim()||"Aucun"}\n\n⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début de la formation afin de confirmer l'inscription.`;
+        const ok=document.getElementById("successMessage"); if(ok) ok.style.display="block"; window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank");
+    });
+
+    // Event -> WhatsApp
+    const ev=document.getElementById("eventForm");
+    if(ev) ev.addEventListener("submit",e=>{e.preventDefault();
+        const text=`Bonjour 👋 Alpha Lamarque,\n\nJe souhaite réserver une prestation pour mon événement.\n\nNom : ${document.getElementById("clientNom").value.trim()}\nTéléphone / WhatsApp : ${document.getElementById("clientTel").value.trim()}\nÉvénement : ${document.getElementById("eventType").value}\nNombre de personnes : ${document.getElementById("eventGuests").value}\nDate : ${document.getElementById("eventDate").value}\nHeure : ${document.getElementById("eventTime").value}\nLieu de l'événement : ${document.getElementById("eventLocation").value.trim()}\nMode de paiement : ${document.getElementById("eventPayment").value}\nMessage : ${document.getElementById("eventMessage").value.trim()||"Aucun"}\n\n⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début du service afin de confirmer la réservation.`;
+        window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank");
+    });
+
+    // Reviews - local pending storage
+    const reviewForm=document.getElementById("reviewForm"), reviewStatus=document.getElementById("reviewStatus");
+    if(reviewForm) reviewForm.addEventListener("submit",e=>{e.preventDefault(); const avis={nom:document.getElementById("avisNom").value.trim(),type:document.getElementById("avisType").value,note:document.getElementById("avisNote").value,message:document.getElementById("avisMessage").value.trim(),date:new Date().toISOString()}; const arr=JSON.parse(localStorage.getItem(REVIEW_KEY)||"[]"); arr.push(avis); localStorage.setItem(REVIEW_KEY,JSON.stringify(arr)); reviewForm.reset(); if(reviewStatus) reviewStatus.style.display="block";});
+
+    // Scroll reveal
+    const cards=document.querySelectorAll(".service-card,.training-card,.advantage,.event-card");
+    if("IntersectionObserver" in window){const obs=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting){en.target.style.opacity="1";en.target.style.transform="translateY(0)";}}),{threshold:.12}); cards.forEach(c=>{c.style.opacity="0";c.style.transform="translateY(25px)";c.style.transition="opacity .7s ease, transform .7s ease";obs.observe(c);});}
+})();
+</script>
+
+
+</body>
+</html>
+```
