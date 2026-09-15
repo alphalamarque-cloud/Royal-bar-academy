@@ -1926,6 +1926,7 @@
 .social-link-large:hover{
     transform:translateY(-3px);
 }
+.admin-footer-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--gold)!important;font-size:11px!important;font-weight:800!important;}
 
 .payment-condition{
     margin-top:25px;
@@ -1959,6 +1960,19 @@
     .social-links-large{display:grid;grid-template-columns:1fr 1fr}
 }
 
+
+/* ADMINISTRATION */
+.admin-nav-link{display:inline-flex;align-items:center;gap:7px;color:var(--gold);font-size:11px;font-weight:800;padding:9px 11px;border:1px solid rgba(212,175,55,.35);border-radius:5px;}
+.admin-nav-link:hover{background:var(--gold);color:#111}
+.admin-section{background:linear-gradient(135deg,#0a0a0a,#151008)}
+.admin-card{max-width:950px;margin:0 auto;background:#141414;border:1px solid rgba(212,175,55,.18);border-radius:10px;padding:30px;box-shadow:var(--shadow)}
+.admin-icon{width:62px;height:62px;display:grid;place-items:center;border-radius:50%;background:rgba(212,175,55,.1);color:var(--gold);font-size:25px;margin-bottom:15px}
+.admin-card h3{font-family:"Playfair Display",serif;font-size:26px;margin-bottom:8px}.admin-card>p{color:#999;font-size:12px;margin-bottom:18px}
+.admin-login-row{display:flex;gap:12px}.admin-login-row input{flex:1;padding:15px;border:1px solid #333;background:#0c0c0c;color:#fff;border-radius:5px;outline:none}.admin-login-row input:focus{border-color:var(--gold)}
+.admin-error,.admin-success{display:none;margin-top:12px;padding:12px;border-radius:5px;font-size:11px;font-weight:700}.admin-error{background:#3a1212;color:#ffb0b0}.admin-success{background:#123a22;color:#9ff0b8}
+.admin-dashboard[hidden],.admin-login-card[hidden]{display:none}.admin-dashboard-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:25px}.admin-dashboard-head h3{margin:0}.admin-dashboard-head p{margin:5px 0 0}.admin-actions{display:flex;gap:12px;flex-wrap:wrap}.admin-security-note{margin-top:18px;padding:14px;border-left:3px solid var(--gold);background:rgba(212,175,55,.06);color:#999;font-size:10px;line-height:1.6}.calendar-program{padding:15px;border:1px solid rgba(212,175,55,.14);background:#0d0d0d;color:#bbb;font-size:12px;border-radius:6px;line-height:1.7}
+@media(max-width:900px){.admin-nav-link{display:none}}@media(max-width:600px){.admin-card{padding:22px}.admin-login-row{flex-direction:column}.admin-dashboard-head{align-items:flex-start;flex-direction:column}.admin-actions .btn{width:100%}}
+
     </style>
 </head>
 
@@ -1991,8 +2005,6 @@
 
             <a href="#services">Services</a>
 
-            <a href="#services">Services</a>
-
             <a href="#evenements">Événements</a>
 
             <a href="#formations">Formations</a>
@@ -2010,6 +2022,11 @@
             <a href="#contact">Contact</a>
 
         </nav>
+
+
+        <a href="#administration" class="admin-nav-link" title="Espace administrateur">
+            <i class="fa-solid fa-lock"></i> Admin
+        </a>
 
 
         <a
@@ -2684,40 +2701,33 @@
 
 <section class="section section-dark" id="calendrier">
     <div class="container">
-
         <div class="section-title">
             <span class="small-title">CALENDRIER</span>
             <h2>Prochaines formations</h2>
-            <p>Les dates et horaires peuvent évoluer selon le programme des sessions.</p>
+            <p>Consultez les prochaines dates et horaires de Royal Bar Academy.</p>
         </div>
 
         <div class="calendar-wrap">
             <div class="calendar-card">
                 <h3><i class="fa-solid fa-calendar-days" style="color:var(--gold);"></i> Prochaine session</h3>
-
                 <div class="calendar-date">
                     <div class="date-box">
-                        <strong>À</strong>
-                        <span>venir</span>
+                        <strong id="calendarDay">À</strong>
+                        <span id="calendarMonth">VENIR</span>
                     </div>
                     <div>
-                        <p class="calendar-meta"><i class="fa-solid fa-calendar"></i> Date : à confirmer</p>
-                        <p class="calendar-meta"><i class="fa-solid fa-clock"></i> Horaires : à confirmer</p>
-                        <p class="calendar-meta"><i class="fa-solid fa-location-dot"></i> Lieu : à confirmer</p>
+                        <p class="calendar-meta"><i class="fa-solid fa-calendar"></i> Date : <strong id="calendarDateText">À confirmer</strong></p>
+                        <p class="calendar-meta"><i class="fa-solid fa-clock"></i> Horaires : <strong id="calendarTimeText">À confirmer</strong></p>
+                        <p class="calendar-meta"><i class="fa-solid fa-location-dot"></i> Lieu : <strong id="calendarLocationText">À confirmer</strong></p>
                     </div>
                 </div>
-
-                <p class="calendar-meta">
-                    <i class="fa-solid fa-circle-info" style="color:var(--gold);"></i>
-                    Les prochaines dates seront publiées ici. Le système peut être relié à une base de données afin de permettre leur modification depuis un espace administrateur.
-                </p>
+                <div class="calendar-program" id="calendarProgramText">Les prochaines dates seront publiées ici.</div>
             </div>
 
             <div class="payment-card">
-                <h3><i class="fa-solid fa-credit-card" style="color:var(--gold);"></i> Paiement</h3>
-
+                <h3><i class="fa-solid fa-wallet" style="color:var(--gold);"></i> Modes de paiement</h3>
                 <div class="payment-method">
-                    <h4>📱 MOBILE MONEY</h4>
+                    <h4><i class="fa-solid fa-mobile-screen-button"></i> MOBILE MONEY</h4>
                     <div class="mobile-money-list">
                         <div class="mm-item mm-mpesa"><i class="fa-solid fa-mobile-screen-button"></i> M-Pesa</div>
                         <div class="mm-item mm-airtel"><i class="fa-solid fa-mobile-screen-button"></i> Airtel Money</div>
@@ -2725,19 +2735,82 @@
                         <div class="mm-item mm-orange"><i class="fa-solid fa-mobile-screen-button"></i> Orange Money</div>
                     </div>
                 </div>
-
                 <div class="payment-method" style="margin-top:15px;">
-                    <h4>💵 PAIEMENT CASH</h4>
+                    <h4><i class="fa-solid fa-money-bill-wave"></i> PAIEMENT CASH</h4>
                     <div class="cash-item"><i class="fa-solid fa-money-bill-wave"></i> Paiement en espèces</div>
                 </div>
             </div>
         </div>
 
         <div class="info-panel payment-condition">
-            <p><i class="fa-solid fa-graduation-cap"></i> <strong>Apprenants :</strong> 50 % du montant de la formation doit être payé avant le début des cours afin de confirmer l'inscription.</p>
-            <p><i class="fa-solid fa-champagne-glasses"></i> <strong>Clients :</strong> 50 % du montant de la prestation doit être payé avant le début du service afin de confirmer la réservation.</p>
+            <p><i class="fa-solid fa-graduation-cap"></i> <strong>Apprenants :</strong> 50 % du montant demandé doit être versé avant le début de la formation afin de confirmer l'inscription.</p>
+            <p><i class="fa-solid fa-champagne-glasses"></i> <strong>Clients :</strong> 50 % du montant demandé doit être versé avant le début du service afin de confirmer la réservation.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ESPACE ADMINISTRATEUR
+========================================================== -->
+
+<section class="section admin-section" id="administration">
+    <div class="container">
+        <div class="section-title">
+            <span class="small-title">ESPACE ADMINISTRATEUR</span>
+            <h2><i class="fa-solid fa-lock"></i> Gestion des formations</h2>
+            <p>Modifiez les dates, les horaires, le lieu et les informations de la prochaine session depuis votre téléphone.</p>
         </div>
 
+        <div class="admin-card" id="adminLoginCard">
+            <div class="admin-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Accès administrateur</h3>
+            <p>Entrez le mot de passe administrateur pour ouvrir le tableau de bord.</p>
+            <div class="admin-login-row">
+                <input type="password" id="adminPassword" placeholder="Mot de passe" autocomplete="current-password">
+                <button class="btn btn-gold" type="button" id="adminLoginBtn"><i class="fa-solid fa-right-to-bracket"></i> Ouvrir</button>
+            </div>
+            <div id="adminLoginError" class="admin-error">Mot de passe incorrect.</div>
+        </div>
+
+        <div class="admin-card admin-dashboard" id="adminDashboard" hidden>
+            <div class="admin-dashboard-head">
+                <div>
+                    <h3><i class="fa-solid fa-calendar-pen"></i> Tableau de bord</h3>
+                    <p>Les modifications sont enregistrées sur cet appareil.</p>
+                </div>
+                <button class="btn btn-outline admin-logout" type="button" id="adminLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Fermer</button>
+            </div>
+
+            <div class="form-grid admin-form-grid">
+                <div class="form-group">
+                    <label for="adminTrainingName">FORMATION</label>
+                    <input id="adminTrainingName" type="text" placeholder="Ex : Barman Professionnel">
+                </div>
+                <div class="form-group">
+                    <label for="adminDate">DATE</label>
+                    <input id="adminDate" type="date">
+                </div>
+                <div class="form-group">
+                    <label for="adminTime">HORAIRES</label>
+                    <input id="adminTime" type="text" placeholder="Ex : 08h00–11h00 et 13h00–15h00">
+                </div>
+                <div class="form-group">
+                    <label for="adminLocation">LIEU</label>
+                    <input id="adminLocation" type="text" placeholder="Ex : Kinshasa, commune, quartier...">
+                </div>
+                <div class="form-group full-width">
+                    <label for="adminProgram">INFORMATIONS / PROGRAMME</label>
+                    <textarea id="adminProgram" rows="4" placeholder="Informations complémentaires sur la session..."></textarea>
+                </div>
+                <div class="form-group full-width admin-actions">
+                    <button class="btn btn-gold" type="button" id="adminSaveBtn"><i class="fa-solid fa-floppy-disk"></i> Enregistrer les changements</button>
+                    <button class="btn btn-outline" type="button" id="adminResetBtn"><i class="fa-solid fa-rotate-left"></i> Réinitialiser</button>
+                </div>
+            </div>
+            <div id="adminSaveStatus" class="admin-success">Modifications enregistrées.</div>
+            <div class="admin-security-note"><i class="fa-solid fa-circle-info"></i> Cette version sans base de données conserve les changements dans le navigateur de l'administrateur. Pour que les dates modifiées soient visibles automatiquement par tous les visiteurs depuis n'importe quel appareil, il faudra ensuite connecter une base de données.</div>
+        </div>
     </div>
 </section>
 
@@ -3464,8 +3537,6 @@
 
                     <div class="form-group full-width">
                         <label for="message">MESSAGE</label>
-                            MESSAGE
-                        </label>
 
                         <textarea
                             id="message"
@@ -3806,6 +3877,10 @@
                 </div>
             </div>
 
+            <a href="#administration" class="admin-footer-link">
+                <i class="fa-solid fa-lock"></i> Espace administrateur
+            </a>
+
             <a
                 href="https://wa.me/243814919250"
                 target="_blank">
@@ -3868,367 +3943,87 @@
 ========================================================== -->
 
 <script>
-    /* =====================================================
-       NOUVEAUX FORMULAIRES — WHATSAPP & AVIS
-    ====================================================== */
+(function(){
+    const WA = "243814919250";
+    const ADMIN_PASSWORD = "ROYAL2026";
+    const STORAGE_KEY = "royalBarTrainingSchedule";
+    const REVIEW_KEY = "royalBarReviews";
 
-    const registrationFormNew = document.getElementById("registrationForm");
+    const defaultSchedule = {
+        trainingName: "Prochaine formation",
+        date: "",
+        time: "À confirmer",
+        location: "À confirmer",
+        program: "Les prochaines dates seront publiées ici."
+    };
 
-    if (registrationFormNew) {
-        registrationFormNew.addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const nom = document.getElementById("nom").value.trim();
-            const telephone = document.getElementById("telephone").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const formation = document.getElementById("formation").value;
-            const residence = document.getElementById("residence").value.trim();
-            const paiement = document.getElementById("paiement").value;
-            const message = document.getElementById("message").value.trim();
-
-            const text =
-`Bonjour 👋 Royal Bar Academy by ALPHA LAMARQUE,
-
-Je souhaite m'inscrire à une formation.
-
-Nom : ${nom}
-Téléphone / WhatsApp : ${telephone}
-Email : ${email || "Non renseigné"}
-Formation : ${formation}
-Lieu de résidence : ${residence}
-Mode de paiement : ${paiement}
-
-Message : ${message || "Aucun"}
-
-⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début de la formation afin de confirmer l'inscription.`;
-
-            const url = "https://wa.me/243814919250?text=" + encodeURIComponent(text);
-            window.open(url, "_blank");
-        });
+    function getSchedule(){
+        try { return {...defaultSchedule, ...(JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"))}; }
+        catch(e){ return {...defaultSchedule}; }
     }
+    function saveSchedule(data){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
 
-    const eventFormNew = document.getElementById("eventForm");
-
-    if (eventFormNew) {
-        eventFormNew.addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const text =
-`Bonjour 👋 Alpha Lamarque,
-
-Je souhaite réserver une prestation pour mon événement.
-
-Nom : ${document.getElementById("clientNom").value.trim()}
-Téléphone / WhatsApp : ${document.getElementById("clientTel").value.trim()}
-Événement : ${document.getElementById("eventType").value}
-Nombre de personnes : ${document.getElementById("eventGuests").value}
-Date : ${document.getElementById("eventDate").value}
-Heure : ${document.getElementById("eventTime").value}
-Lieu de l'événement : ${document.getElementById("eventLocation").value.trim()}
-Mode de paiement : ${document.getElementById("eventPayment").value}
-Message : ${document.getElementById("eventMessage").value.trim() || "Aucun"}
-
-⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début du service afin de confirmer la réservation.`;
-
-            const url = "https://wa.me/243814919250?text=" + encodeURIComponent(text);
-            window.open(url, "_blank");
-        });
+    function formatScheduleDate(value){
+        if(!value) return {day:"À", month:"VENIR", full:"À confirmer"};
+        const d = new Date(value + "T12:00:00");
+        const months = ["JAN","FÉV","MAR","AVR","MAI","JUIN","JUIL","AOÛ","SEP","OCT","NOV","DÉC"];
+        return {day:String(d.getDate()), month:months[d.getMonth()], full:d.toLocaleDateString("fr-FR", {day:"2-digit", month:"long", year:"numeric"})};
     }
-
-    const reviewFormNew = document.getElementById("reviewForm");
-    const reviewStatusNew = document.getElementById("reviewStatus");
-
-    if (reviewFormNew) {
-        reviewStatusNew.style.display = "none";
-
-        reviewFormNew.addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const avis = {
-                nom: document.getElementById("avisNom").value.trim(),
-                type: document.getElementById("avisType").value,
-                note: document.getElementById("avisNote").value,
-                message: document.getElementById("avisMessage").value.trim(),
-                date: new Date().toISOString()
-            };
-
-            /* Stockage local : l'avis reste en attente sur l'appareil.
-               Pour une publication réellement partagée entre visiteurs,
-               cette partie devra être reliée à une base de données. */
-            const existing = JSON.parse(localStorage.getItem("royalBarReviews") || "[]");
-            existing.push(avis);
-            localStorage.setItem("royalBarReviews", JSON.stringify(existing));
-
-            reviewFormNew.reset();
-            reviewStatusNew.style.display = "block";
-        });
+    function renderSchedule(){
+        const s=getSchedule(), f=formatScheduleDate(s.date);
+        const set=(id,val)=>{const el=document.getElementById(id); if(el) el.textContent=val;};
+        set("calendarDay",f.day); set("calendarMonth",f.month); set("calendarDateText",f.full); set("calendarTimeText",s.time || "À confirmer"); set("calendarLocationText",s.location || "À confirmer");
+        const program=document.getElementById("calendarProgramText");
+        if(program) program.innerHTML='<strong>'+escapeHtml(s.trainingName || "Prochaine formation")+'</strong><br>'+escapeHtml(s.program || defaultSchedule.program);
     }
+    function escapeHtml(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 
+    // Admin
+    const loginBtn=document.getElementById("adminLoginBtn"), password=document.getElementById("adminPassword");
+    const loginCard=document.getElementById("adminLoginCard"), dashboard=document.getElementById("adminDashboard"), loginError=document.getElementById("adminLoginError");
+    function loadAdminFields(){ const s=getSchedule(); document.getElementById("adminTrainingName").value=s.trainingName; document.getElementById("adminDate").value=s.date; document.getElementById("adminTime").value=s.time; document.getElementById("adminLocation").value=s.location; document.getElementById("adminProgram").value=s.program; }
+    function openAdmin(){ loginCard.hidden=true; dashboard.hidden=false; loadAdminFields(); }
+    if(loginBtn) loginBtn.addEventListener("click",()=>{ if(password.value===ADMIN_PASSWORD){loginError.style.display="none"; openAdmin();} else loginError.style.display="block"; });
+    if(password) password.addEventListener("keydown",e=>{if(e.key==="Enter") loginBtn.click();});
+    const logout=document.getElementById("adminLogoutBtn"); if(logout) logout.addEventListener("click",()=>{dashboard.hidden=true;loginCard.hidden=false;password.value="";});
+    const saveBtn=document.getElementById("adminSaveBtn");
+    if(saveBtn) saveBtn.addEventListener("click",()=>{
+        saveSchedule({trainingName:document.getElementById("adminTrainingName").value.trim()||defaultSchedule.trainingName,date:document.getElementById("adminDate").value,time:document.getElementById("adminTime").value.trim()||defaultSchedule.time,location:document.getElementById("adminLocation").value.trim()||defaultSchedule.location,program:document.getElementById("adminProgram").value.trim()||defaultSchedule.program});
+        renderSchedule(); const st=document.getElementById("adminSaveStatus"); st.style.display="block"; setTimeout(()=>st.style.display="none",3000);
+    });
+    const resetBtn=document.getElementById("adminResetBtn"); if(resetBtn) resetBtn.addEventListener("click",()=>{localStorage.removeItem(STORAGE_KEY);loadAdminFields();renderSchedule();});
+    renderSchedule();
 
+    // Mobile menu
+    const menuButton=document.getElementById("menuButton"), navLinks=document.getElementById("navLinks");
+    if(menuButton && navLinks){menuButton.addEventListener("click",()=>{navLinks.classList.toggle("active");const i=menuButton.querySelector("i");i.classList.toggle("fa-bars");i.classList.toggle("fa-xmark");}); navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("active");const i=menuButton.querySelector("i");i.classList.add("fa-bars");i.classList.remove("fa-xmark");}));}
 
-    /* =====================================================
-       MENU MOBILE
-    ====================================================== */
+    // Header + top button
+    const header=document.getElementById("header"), topButton=document.getElementById("topButton");
+    window.addEventListener("scroll",()=>{if(window.scrollY>50){header.classList.add("scrolled");topButton.classList.add("show");}else{header.classList.remove("scrolled");topButton.classList.remove("show");}});
 
-    const menuButton =
-        document.getElementById("menuButton");
-
-    const navLinks =
-        document.getElementById("navLinks");
-
-
-    menuButton.addEventListener("click", function() {
-
-        navLinks.classList.toggle("active");
-
-        const icon =
-            menuButton.querySelector("i");
-
-
-        if (navLinks.classList.contains("active")) {
-
-            icon.classList.remove("fa-bars");
-
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-
-            icon.classList.add("fa-bars");
-
-        }
-
+    // Registration -> WhatsApp
+    const reg=document.getElementById("registrationForm");
+    if(reg) reg.addEventListener("submit",e=>{e.preventDefault();
+        const text=`Bonjour 👋 Royal Bar Academy by ALPHA LAMARQUE,\n\nJe souhaite m'inscrire à une formation.\n\nNom : ${document.getElementById("nom").value.trim()}\nTéléphone / WhatsApp : ${document.getElementById("telephone").value.trim()}\nEmail : ${document.getElementById("email").value.trim()||"Non renseigné"}\nFormation : ${document.getElementById("formation").value}\nLieu de résidence : ${document.getElementById("residence").value.trim()}\nMode de paiement : ${document.getElementById("paiement").value}\nMessage : ${document.getElementById("message").value.trim()||"Aucun"}\n\n⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début de la formation afin de confirmer l'inscription.`;
+        const ok=document.getElementById("successMessage"); if(ok) ok.style.display="block"; window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank");
     });
 
-
-    /* =====================================================
-       FERMER LE MENU APRÈS UN CLIC
-    ====================================================== */
-
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
-                navLinks.classList.remove("active");
-
-                const icon =
-                    menuButton.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-
-                icon.classList.add("fa-bars");
-
-            });
-
-        });
-
-
-    /* =====================================================
-       HEADER AU SCROLL
-    ====================================================== */
-
-    const header =
-        document.getElementById("header");
-
-
-    const topButton =
-        document.getElementById("topButton");
-
-
-    window.addEventListener("scroll", function() {
-
-        if (window.scrollY > 50) {
-
-            header.classList.add("scrolled");
-
-            topButton.classList.add("show");
-
-        } else {
-
-            header.classList.remove("scrolled");
-
-            topButton.classList.remove("show");
-
-        }
-
+    // Event -> WhatsApp
+    const ev=document.getElementById("eventForm");
+    if(ev) ev.addEventListener("submit",e=>{e.preventDefault();
+        const text=`Bonjour 👋 Alpha Lamarque,\n\nJe souhaite réserver une prestation pour mon événement.\n\nNom : ${document.getElementById("clientNom").value.trim()}\nTéléphone / WhatsApp : ${document.getElementById("clientTel").value.trim()}\nÉvénement : ${document.getElementById("eventType").value}\nNombre de personnes : ${document.getElementById("eventGuests").value}\nDate : ${document.getElementById("eventDate").value}\nHeure : ${document.getElementById("eventTime").value}\nLieu de l'événement : ${document.getElementById("eventLocation").value.trim()}\nMode de paiement : ${document.getElementById("eventPayment").value}\nMessage : ${document.getElementById("eventMessage").value.trim()||"Aucun"}\n\n⚠️ Je prends connaissance de la condition : 50 % du montant demandé doit être versé avant le début du service afin de confirmer la réservation.`;
+        window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(text),"_blank");
     });
 
-
-    /* =====================================================
-       FORMULAIRE → WHATSAPP
-    ====================================================== */
-
-    const registrationForm =
-        document.getElementById("registrationForm");
-
-
-    const successMessage =
-        document.getElementById("successMessage");
-
-
-    registrationForm.addEventListener(
-        "submit",
-        function(event) {
-
-            event.preventDefault();
-
-
-            const nom =
-                document.getElementById("nom").value.trim();
-
-
-            const telephone =
-                document
-                    .getElementById("telephone")
-                    .value.trim();
-
-
-            const email =
-                document
-                    .getElementById("email")
-                    .value.trim();
-
-
-            const formation =
-                document
-                    .getElementById("formation")
-                    .value;
-
-
-            const message =
-                document
-                    .getElementById("message")
-                    .value.trim();
-
-
-            if (
-                nom === "" ||
-                telephone === "" ||
-                formation === ""
-            ) {
-
-                alert(
-                    "Veuillez remplir les champs obligatoires."
-                );
-
-                return;
-
-            }
-
-
-            let texte =
-                "Bonjour Royal Bar Academy !"
-                + "\n\n"
-                + "Je souhaite m'inscrire à une formation."
-                + "\n\n"
-                + "Nom : " + nom
-                + "\n"
-                + "Téléphone : " + telephone
-                + "\n"
-                + "Formation : " + formation;
-
-
-            if (email !== "") {
-
-                texte +=
-                    "\n"
-                    + "Email : "
-                    + email;
-
-            }
-
-
-            if (message !== "") {
-
-                texte +=
-                    "\n\n"
-                    + "Message : "
-                    + message;
-
-            }
-
-
-            texte +=
-                "\n\n"
-                + "Merci.";
-
-
-            const whatsappNumber =
-                "243814919250";
-
-
-            const whatsappURL =
-                "https://wa.me/"
-                + whatsappNumber
-                + "?text="
-                + encodeURIComponent(texte);
-
-
-            successMessage.style.display =
-                "block";
-
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       ANIMATION SIMPLE DES CARTES
-    ====================================================== */
-
-    const cards =
-        document.querySelectorAll(
-            ".service-card, .training-card, .advantage"
-        );
-
-
-    const observer =
-        new IntersectionObserver(
-            function(entries) {
-
-                entries.forEach(function(entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-
-    cards.forEach(function(card) {
-
-        card.style.opacity = "0";
-
-        card.style.transform =
-            "translateY(25px)";
-
-        card.style.transition =
-            "opacity .7s ease, transform .7s ease";
-
-        observer.observe(card);
-
-    });
-
-
+    // Reviews - local pending storage
+    const reviewForm=document.getElementById("reviewForm"), reviewStatus=document.getElementById("reviewStatus");
+    if(reviewForm) reviewForm.addEventListener("submit",e=>{e.preventDefault(); const avis={nom:document.getElementById("avisNom").value.trim(),type:document.getElementById("avisType").value,note:document.getElementById("avisNote").value,message:document.getElementById("avisMessage").value.trim(),date:new Date().toISOString()}; const arr=JSON.parse(localStorage.getItem(REVIEW_KEY)||"[]"); arr.push(avis); localStorage.setItem(REVIEW_KEY,JSON.stringify(arr)); reviewForm.reset(); if(reviewStatus) reviewStatus.style.display="block";});
+
+    // Scroll reveal
+    const cards=document.querySelectorAll(".service-card,.training-card,.advantage,.event-card");
+    if("IntersectionObserver" in window){const obs=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting){en.target.style.opacity="1";en.target.style.transform="translateY(0)";}}),{threshold:.12}); cards.forEach(c=>{c.style.opacity="0";c.style.transform="translateY(25px)";c.style.transition="opacity .7s ease, transform .7s ease";obs.observe(c);});}
+})();
 </script>
 
 
